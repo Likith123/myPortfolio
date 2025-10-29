@@ -1,8 +1,9 @@
 "use client";
-import { LinkIcon } from "lucide-react";
+import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+
+import { LinkIcon } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
 
 const projectsList = [
@@ -22,10 +23,9 @@ const projectsList = [
   },
 ];
 
-function Projects() {
-  const ref = useRef<HTMLDivElement>(null);
+function Projects({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
   return (
-    <section className="p-8 flex flex-col gap-8" ref={ref}>
+    <motion.section className="p-8 flex flex-col gap-8 scroll-mt-16" ref={ref}>
       <h1 className="text-3xl font-bold text-center mt-8">Projects</h1>
       <div className="flex flex-col items-center justify-center gap-4">
         {/* Project listings will go here */}
@@ -77,7 +77,7 @@ function Projects() {
           </div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }
 

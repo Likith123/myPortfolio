@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -9,22 +10,27 @@ const navItems = {
   "/projects": "Projects",
   "/contactMe": "Contact Me",
 };
-
+// font-semibold border-b-4 border-white rounded-b-md
 function NavLinks() {
   const pathname = usePathname();
   return (
     <>
       {Object.entries(navItems).map(([key, value]) => (
-        <Link
-          key={key}
-          href={key}
-          className={
-            pathname === key
-              ? "bg-gradient-to-br from-blue-500 via-purple-300 bg-blend-overlay to-green-500 font-bold text-transparent bg-clip-text"
-              : ""
-          }
-        >
-          {value}
+        <Link key={key} href={key}>
+          <motion.span
+            className={
+              pathname === key
+                ? "relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[4px] after:bg-blue-500 after:rounded-b-lg text-gray-300"
+                : "relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0"
+            }
+            transition={{
+              type: "spring",
+              stiffness: 380,
+              damping: 30,
+            }}
+          >
+            {value}
+          </motion.span>
         </Link>
       ))}
     </>

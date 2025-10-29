@@ -3,10 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "@/components/Navbar";
-import About from "./about/page";
-import Contact from "./contactMe/page";
-import Home from "./page";
-import Projects from "./projects/page";
+import Sections from "@/components/Sections";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,9 +37,10 @@ export const metadata: Metadata = {
   },
 };
 
+
 export default function RootLayout() {
   return (
-    <html lang="en">
+    <html lang="en" className="!scroll-smooth">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-screen`}
       >
@@ -53,10 +51,7 @@ export default function RootLayout() {
         />
         <Navbar />
         <main>
-          <Home />
-          <About />
-          <Projects />
-          <Contact />
+          <Sections />
         </main>
       </body>
     </html>

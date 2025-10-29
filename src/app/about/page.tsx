@@ -5,16 +5,18 @@ import {
   programmingLanguagesIcons,
   toolsIcons,
 } from "@/lib/Icons";
+import { motion } from "motion/react";
 
 import Icons from "@/components/Icons";
 
 import ExperienceTimeline from "@/components/ui/Timeline";
-import { useRef } from "react";
 
-function About() {
-  const ref = useRef<HTMLDivElement>(null);
+function About({ref}: {ref: React.RefObject<HTMLElement | null>}) {
   return (
-    <section className="p-8 flex flex-col gap-8" ref={ref}>
+    <motion.section
+        className="p-8 flex flex-col gap-8 scroll-mt-16"
+        ref={ref}
+      >
       <h1 className="text-3xl font-bold text-center mt-8">About Me</h1>
       {/* About Myself */}
       <div className="bg-slate-600 p-8 rounded-md">
@@ -80,7 +82,7 @@ function About() {
       <div className="bg-slate-600 p-8 rounded-md">
         <ExperienceTimeline />
       </div>
-    </section>
+    </motion.section>
   );
 }
 

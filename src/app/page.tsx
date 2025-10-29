@@ -2,9 +2,12 @@
 
 import { motion } from "motion/react";
 import Image from "next/image";
-import { useRef } from "react";
-export default function Home() {
-  const ref = useRef<HTMLDivElement>(null);
+import Link from "next/link";
+export default function Home({
+  ref,
+}: {
+  ref: React.RefObject<HTMLElement | null>;
+}) {
   return (
     <motion.section
       className="flex w-full h-[100vh] items-center justify-center"
@@ -33,12 +36,18 @@ export default function Home() {
           illum corrupti optio omnis voluptas repellat
         </p>
         <div className="flex space-x-8 text-lg">
-          <button className="px-4 py-2 border-2 border-blue-500 rounded-md bg-blue-500 text-white">
+          <Link
+            href=""
+            className="px-4 py-2 border-2 border-blue-500 rounded-full bg-blue-500 text-white"
+          >
             Hire Me
-          </button>
-          <button className="px-4 py-2 border-2 border-gray-300 rounded-md">
+          </Link>
+          <Link
+            href=""
+            className="px-4 py-2 border-2 border-gray-300 rounded-full"
+          >
             Contact Me
-          </button>
+          </Link>
         </div>
       </motion.div>
       <motion.div

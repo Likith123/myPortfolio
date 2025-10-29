@@ -1,8 +1,8 @@
 "use client";
 import Icons from "@/components/Icons";
 import { socialIcons } from "@/lib/Icons";
+import { motion } from "motion/react";
 import Form from "next/form";
-import { useRef } from "react";
 
 type InputProps = {
   name: string;
@@ -27,10 +27,10 @@ function Input({ name, label, placeholder, type = "text" }: InputProps) {
   );
 }
 
-function ContactMe() {
-  const ref = useRef<HTMLDivElement>(null);
+function ContactMe({ref}: {ref: React.RefObject<HTMLElement | null>}) {
   return (
-    <section className="w-full h-[100vh] md:flex-row" ref={ref}>
+    <motion.section
+        className="w-full h-[100vh] md:flex-row scroll-mt-16" ref={ref}>
       {/* <h1 className="text-4xl text-center font-bold mt-8">Contact Me</h1> */}
       <div className="flex flex-col w-full h-[100vh] md:flex-row">
         <div className="flex flex-1 flex-col items-center justify-center space-y-16 w-1/2 h-[100vh]">
@@ -100,22 +100,8 @@ function ContactMe() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
 export default ContactMe;
-/* <section>
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic libero voluptas repudiandae expedita odit laborum molestias animi at esse officia fugit labore obcaecati, veniam eius neque exercitationem maiores alias dignissimos.
-    </div>
-    <div>
-      <form action="">
-        {/* email, name, message & send button */
-//     </form>
-//     <hr />
-//     <div>
-//       {/* social icons like Github, LinkedIn, Twitter */}
-//     </div>
-//   </div>
-// </section>; */}
