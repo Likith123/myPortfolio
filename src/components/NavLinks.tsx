@@ -15,24 +15,39 @@ function NavLinks() {
   const pathname = usePathname();
   return (
     <>
-      {Object.entries(navItems).map(([key, value]) => (
-        <Link key={key} href={key}>
-          <motion.span
-            className={
-              pathname === key
-                ? "relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[4px] after:bg-blue-500 after:rounded-b-lg text-gray-300"
-                : "relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0"
-            }
-            transition={{
-              type: "spring",
-              stiffness: 380,
-              damping: 30,
-            }}
+      {Object.entries(navItems).map(([key, value]) => {
+        const isActive = pathname === key;
+        return (
+          <Link
+            key={key}
+            href={key}
+            className="flex flex-col items-center justify-center relative"
           >
-            {value}
-          </motion.span>
-        </Link>
-      ))}
+            <span
+              className={`pb-1 transition-colors duration-300 ${
+                isActive
+                  ? "text-gray-400 font-semibold"
+                  : "text-gray-500 hover:text-gray-400"
+              }`}
+            >
+              {value}
+            </span>
+
+            {/* underline */}
+            {isActive && (
+              <motion.span
+                layoutId="underline"
+                className="absolute -bottom-[2px] h-[3px] w-full bg-blue-500 rounded-b-lg"
+                transition={{
+                  type: "spring",
+                  stiffness: 380,
+                  damping: 30,
+                }}
+              />
+            )}
+          </Link>
+        );
+      })}
     </>
   );
 }
