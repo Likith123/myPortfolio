@@ -1,6 +1,6 @@
 "use client";
 import Icons from "@/components/Icons";
-import { socialIcons } from "@/lib/Icons";
+import { socialIcons } from "@/lib/data";
 import { motion } from "motion/react";
 import Form from "next/form";
 

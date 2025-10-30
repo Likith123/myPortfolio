@@ -6,22 +6,7 @@ import Link from "next/link";
 import { LinkIcon } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
 
-const projectsList = [
-  {
-    title: "Project Alpha",
-    description:
-      "An innovative project that revolutionizes technology. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet.",
-    link: "https://example.com/project-alpha",
-    image: "/undraw_coding_joxb.svg",
-  },
-  {
-    title: "Project Beta",
-    description:
-      "A groundbreaking project that changes the way we interact. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet.",
-    link: "https://example.com/project-beta",
-    image: "/globe.svg",
-  },
-];
+import { projectsList } from "@/lib/data";
 
 function Projects({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
   return (

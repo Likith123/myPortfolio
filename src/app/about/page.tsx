@@ -4,7 +4,7 @@ import {
   frameworksIcons,
   programmingLanguagesIcons,
   toolsIcons,
-} from "@/lib/Icons";
+} from "@/lib/data";
 import { motion } from "motion/react";
 
 import Icons from "@/components/Icons";

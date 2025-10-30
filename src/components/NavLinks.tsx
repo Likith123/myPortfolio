@@ -38,7 +38,7 @@ function NavLinks() {
             {isActive && (
               <motion.span
                 layoutId="underline"
-                className="absolute -bottom-[2px] h-[3px] w-full bg-blue-500 rounded-b-lg"
+                className="absolute -bottom-[2px] h-[4px] w-full bg-blue-500 rounded-b-lg"
                 transition={{
                   type: "spring",
                   stiffness: 380,

@@ -1,5 +1,5 @@
 "use client";
-import { experiences } from "@/lib/Experience";
+import { experiences } from "@/lib/data";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
