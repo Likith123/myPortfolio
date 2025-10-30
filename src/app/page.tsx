@@ -10,8 +10,9 @@ export default function Home({
 }) {
   return (
     <motion.section
-      className="flex w-full h-[100vh] items-center justify-center"
+      className="flex w-full h-[100vh] items-center justify-center scroll-mt-16"
       ref={ref}
+      id="home"
     >
       <motion.div
         className="flex flex-col flex-1 justify-center w-1/2 p-8 space-y-8"

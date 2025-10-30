@@ -25,7 +25,11 @@ const projectsList = [
 
 function Projects({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
   return (
-    <motion.section className="p-8 flex flex-col gap-8 scroll-mt-16" ref={ref}>
+    <motion.section
+      className="p-8 flex flex-col gap-8 scroll-mt-16"
+      ref={ref}
+      id="projects"
+    >
       <h1 className="text-3xl font-bold text-center mt-8">Projects</h1>
       <div className="flex flex-col items-center justify-center gap-4">
         {/* Project listings will go here */}

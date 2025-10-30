@@ -27,10 +27,13 @@ function Input({ name, label, placeholder, type = "text" }: InputProps) {
   );
 }
 
-function ContactMe({ref}: {ref: React.RefObject<HTMLElement | null>}) {
+function ContactMe({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
   return (
     <motion.section
-        className="w-full h-[100vh] md:flex-row scroll-mt-16" ref={ref}>
+      className="w-full h-[100vh] md:flex-row scroll-mt-16"
+      ref={ref}
+      id="contactMe"
+    >
       {/* <h1 className="text-4xl text-center font-bold mt-8">Contact Me</h1> */}
       <div className="flex flex-col w-full h-[100vh] md:flex-row">
         <div className="flex flex-1 flex-col items-center justify-center space-y-16 w-1/2 h-[100vh]">
