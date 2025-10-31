@@ -1,22 +1,20 @@
-"use client";
-import { motion } from "motion/react";
+import { LinkIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-
-import { LinkIcon } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
 
+import MotionDiv from "@/components/MotionDiv";
 import { projectsList } from "@/lib/data";
 
 function Projects({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
   return (
-    <motion.section
+    <section
       className="p-8 flex flex-col gap-8 scroll-mt-16"
       ref={ref}
       id="projects"
     >
       <h1 className="text-3xl font-bold text-center mt-8">Projects</h1>
-      <div className="flex flex-col items-center justify-center gap-4">
+      <MotionDiv className="flex flex-col items-center justify-center gap-4">
         {/* Project listings will go here */}
         {projectsList.map((project, index) => (
           <div
@@ -65,8 +63,8 @@ function Projects({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
             </div>
           </div>
         ))}
-      </div>
-    </motion.section>
+      </MotionDiv>
+    </section>
   );
 }
 

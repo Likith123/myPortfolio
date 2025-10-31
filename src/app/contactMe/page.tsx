@@ -1,8 +1,8 @@
-"use client";
-import Icons from "@/components/Icons";
 import { socialIcons } from "@/lib/data";
-import { motion } from "motion/react";
 import Form from "next/form";
+
+import Icons from "@/components/Icons";
+import MotionDiv from "@/components/MotionDiv";
 
 type InputProps = {
   name: string;
@@ -29,14 +29,14 @@ function Input({ name, label, placeholder, type = "text" }: InputProps) {
 
 function ContactMe({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
   return (
-    <motion.section
+    <section
       className="w-full h-[100vh] md:flex-row scroll-mt-16"
       ref={ref}
       id="contactMe"
     >
       {/* <h1 className="text-4xl text-center font-bold mt-8">Contact Me</h1> */}
       <div className="flex flex-col w-full h-[100vh] md:flex-row">
-        <div className="flex flex-1 flex-col items-center justify-center space-y-16 w-1/2 h-[100vh]">
+        <MotionDiv className="flex flex-1 flex-col items-center justify-center space-y-16 w-1/2 h-[100vh]">
           <div className="w-3/5 p-8 rounded-md">
             <h2 className="text-2xl font-semibold mb-4">Let&apos;s Connect</h2>
             <p className="text-blue-100 font-semibold text-xl">
@@ -54,7 +54,7 @@ function ContactMe({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
               <Icons IconsList={socialIcons} />
             </div>
           </div>
-        </div>
+        </MotionDiv>
 
         {/* Divider */}
 
@@ -68,7 +68,7 @@ function ContactMe({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
         </div>
 
         {/* Contact Form */}
-        <div className="flex flex-1 flex-col items-center justify-center space-y-16 w-1/2 h-[100vh]">
+        <MotionDiv className="flex flex-1 flex-col items-center justify-center space-y-16 w-1/2 h-[100vh]">
           <div className="w-3/5 p-8 rounded-md">
             <Form action="/search" className="flex flex-col space-y-4">
               <Input name="fullName" label="Full Name" placeholder="John Doe" />
@@ -101,9 +101,9 @@ function ContactMe({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
               </div>
             </Form>
           </div>
-        </div>
+        </MotionDiv>
       </div>
-    </motion.section>
+    </section>
   );
 }
 

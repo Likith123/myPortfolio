@@ -3,21 +3,21 @@ import React from "react";
 import { DiJava } from "react-icons/di";
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import {
-    SiC,
-    SiCplusplus,
-    SiDocker,
-    SiExpress,
-    SiGit,
-    SiGo,
-    SiJavascript,
-    SiMongodb,
-    SiNextdotjs,
-    SiNodedotjs,
-    SiPostgresql,
-    SiPython,
-    SiReact,
-    SiTailwindcss,
-    SiTypescript,
+  SiC,
+  SiCplusplus,
+  SiDocker,
+  SiExpress,
+  SiGit,
+  SiGo,
+  SiJavascript,
+  SiMongodb,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPostgresql,
+  SiPython,
+  SiReact,
+  SiTailwindcss,
+  SiTypescript,
 } from "react-icons/si";
 
 // Experience Data
@@ -113,8 +113,14 @@ const projectsList = [
   },
 ];
 
+const navItems = [
+  { path: "/", label: "Home" },
+  { path: "/about", label: "About" },
+  { path: "/projects", label: "Projects" },
+  { path: "/contactMe", label: "Contact Me" },
+];
+
 export {
-    databaseIcons, experiences, frameworksIcons,
-    programmingLanguagesIcons, projectsList, socialIcons,
-    toolsIcons
+  databaseIcons, experiences, frameworksIcons, navItems, programmingLanguagesIcons, projectsList, socialIcons,
+  toolsIcons
 };

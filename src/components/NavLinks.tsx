@@ -1,17 +1,11 @@
 "use client";
 
-import { motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const navItems = [
-  { path: "/", label: "Home" },
-  { path: "/about", label: "About" },
-  { path: "/projects", label: "Projects" },
-  { path: "/contactMe", label: "Contact Me" },
-];
+import { navItems } from "@/lib/data";
+import Underline from "./ui/Underline";
 
-// font-semibold border-b-4 border-white rounded-b-md
 function NavLinks() {
   const pathname = usePathname();
   return (
@@ -34,18 +28,7 @@ function NavLinks() {
               {label}
             </span>
 
-            {/* underline */}
-            {isActive && (
-              <motion.span
-                layoutId="underline"
-                className="absolute -bottom-[2px] h-[4px] w-full bg-blue-500 rounded-b-lg"
-                transition={{
-                  type: "spring",
-                  stiffness: 380,
-                  damping: 30,
-                }}
-              />
-            )}
+            {isActive ? <Underline /> : null}
           </Link>
         );
       })}

@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "motion/react";
+import MotionDiv from "@/components/MotionDiv";
 import Image from "next/image";
 import Link from "next/link";
 export default function Home({
@@ -9,12 +7,12 @@ export default function Home({
   ref: React.RefObject<HTMLElement | null>;
 }) {
   return (
-    <motion.section
+    <section
       className="flex w-full h-[100vh] items-center justify-center scroll-mt-16"
       ref={ref}
       id="home"
     >
-      <motion.div
+      <MotionDiv
         className="flex flex-col flex-1 justify-center w-1/2 p-8 space-y-8"
         animate={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: 50 }}
@@ -23,7 +21,7 @@ export default function Home({
         <span className="text-4xl gap-4 flex flex-col ">
           <h1>Hi there, I&apos;m</h1>
           <p className="text-6xl bg-gradient-to-br from-blue-500 via-purple-300 bg-blend-overlay to-green-500 font-bold text-transparent bg-clip-text">
-            Limkith Adusumalli
+            Likith Adusumalli
           </p>
         </span>
         <p>
@@ -38,20 +36,20 @@ export default function Home({
         </p>
         <div className="flex space-x-8 text-lg">
           <Link
-            href=""
+            href="/contactMe"
             className="px-4 py-2 border-2 border-blue-500 rounded-full bg-blue-500 text-white"
           >
-            Hire Me
+            Contact Me
           </Link>
           <Link
             href=""
             className="px-4 py-2 border-2 border-gray-300 rounded-full"
           >
-            Contact Me
+            Resume
           </Link>
         </div>
-      </motion.div>
-      <motion.div
+      </MotionDiv>
+      <MotionDiv
         className="flex flex-1 items-center justify-center w-1/2 h-[100vh]"
         animate={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: 50 }}
@@ -66,7 +64,7 @@ export default function Home({
             width={400}
           ></Image>
         </div>
-      </motion.div>
-    </motion.section>
+      </MotionDiv>
+    </section>
   );
 }
