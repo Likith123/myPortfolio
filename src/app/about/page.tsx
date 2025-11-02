@@ -1,13 +1,12 @@
+import Icons from "@/components/Icons";
+import MotionDiv from "@/components/MotionDiv";
+import ExperienceTimeline from "@/components/ui/Timeline";
 import {
   databaseIcons,
   frameworksIcons,
   programmingLanguagesIcons,
   toolsIcons,
 } from "@/lib/data";
-
-import Icons from "@/components/Icons";
-import MotionDiv from "@/components/MotionDiv";
-import ExperienceTimeline from "@/components/ui/Timeline";
 
 function About({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
   return (

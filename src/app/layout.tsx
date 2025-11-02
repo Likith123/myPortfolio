@@ -40,9 +40,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout() {
   return (
-    <html lang="en" className="!scroll-smooth">
+    <html lang="en" className="scroll-smooth!">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-screen bg-gray-50 text-black-900 dark:bg-gray-900 dark:text-white`}
       >
         <link
           rel="stylesheet"
