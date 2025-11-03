@@ -12,9 +12,11 @@ function LightDarkToggle() {
       setTheme("light");
       window.localStorage.setItem("theme", "light");
       document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
     } else {
       setTheme("dark");
       window.localStorage.setItem("theme", "dark");
+      document.documentElement.classList.remove("light");
       document.documentElement.classList.add("dark");
     }
   }
@@ -24,15 +26,19 @@ function LightDarkToggle() {
     if (savedTheme) {
       setTheme(savedTheme);
       if (savedTheme === "dark") {
+        document.documentElement.classList.remove("light");
         document.documentElement.classList.add("dark");
       } else {
         document.documentElement.classList.remove("dark");
+        document.documentElement.classList.add("light");
       }
     } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
       setTheme("light");
       document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
     } else {
       setTheme("dark");
+      document.documentElement.classList.remove("light");
       document.documentElement.classList.add("dark");
     }
   }, []);

@@ -8,7 +8,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
-        colors: {},
+        colors: {
+          primary: "rgb(var(--primary))",
+          secondary: "rgb(var(--secondary))",
+          cta: "rgb(var(--cta))",
+          "cta-hover": "rgb(var(--cta-hover))",
+          "border-color": "rgb(var(--background))",
+          "card-background": "rgb(var(--background))",
+          "card-hover": "rgb(var(--background))",
+          "shadow-color": "rgb(var(--background))",
+        },
     },
   },
   plugins: [],
