@@ -17,7 +17,7 @@ function About({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
     >
       <h1 className="text-3xl font-bold text-center mt-8">About Me</h1>
       {/* About Myself */}
-      <MotionDiv className="bg-slate-600 p-8 rounded-md">
+      <MotionDiv className="p-8 rounded-md">
         <div className="font-medium text-lg italic text-slate-300 pb-4">
           **I didn&apos;t grow up dreaming of becoming a developer — but once I
           started, I never looked back.**

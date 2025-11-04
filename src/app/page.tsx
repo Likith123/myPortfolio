@@ -8,19 +8,19 @@ export default function Home({
 }) {
   return (
     <section
-      className="flex w-full h-[100vh] items-center justify-center scroll-mt-16"
+      className="flex w-full h-screen items-center justify-center scroll-mt-16"
       ref={ref}
       id="home"
     >
       <MotionDiv
-        className="flex flex-col flex-1 justify-center w-1/2 p-8 space-y-8"
+        className="flex flex-col flex-1 justify-center w-1/2 px-16 py-8 space-y-8"
         animate={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: 50 }}
         transition={{ duration: 0.5 }}
       >
-        <span className="text-4xl gap-4 flex flex-col ">
+        <span className="text-primary/80 text-4xl gap-4 flex flex-col ">
           <h1>Hi there, I&apos;m</h1>
-          <p className="text-6xl bg-gradient-to-br from-blue-500 via-purple-300 bg-blend-overlay to-green-500 font-bold text-transparent bg-clip-text">
+          <p className="text-primary/90 text-6xl font-bold">
             Likith Adusumalli
           </p>
         </span>
@@ -37,20 +37,20 @@ export default function Home({
         <div className="flex space-x-8 text-lg">
           <Link
             href="/contactMe"
-            className="px-4 py-2 border-2 border-blue-500 rounded-full bg-blue-500 text-white"
+            className="px-4 py-2 border-2 rounded-full bg-primary text-bgcolor font-semibold"
           >
             Contact Me
           </Link>
           <Link
             href=""
-            className="px-4 py-2 border-2 border-gray-300 rounded-full"
+            className="px-4 py-2 border-2 border-primary rounded-full font-semibold"
           >
             Resume
           </Link>
         </div>
       </MotionDiv>
       <MotionDiv
-        className="flex flex-1 items-center justify-center w-1/2 h-[100vh]"
+        className="flex flex-1 items-center justify-center w-1/2 h-screen"
         animate={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: 50 }}
         transition={{ duration: 0.5 }}

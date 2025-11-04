@@ -5,7 +5,7 @@ function Underline() {
   return (
     <motion.span
       layoutId="underline"
-      className="absolute -bottom-[2px] h-[4px] w-full bg-blue-500 rounded-b-lg"
+      className="absolute -bottom-0.5 h-1 w-full bg-primary/90 rounded-b-lg"
       transition={{
         type: "spring",
         stiffness: 380,

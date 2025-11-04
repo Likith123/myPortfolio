@@ -1,22 +1,28 @@
 @import "tailwindcss";
 
-.light {
-  --background: 25 21 242;
-  --primary: 226 226 214;
-  --secondary: 255 255 0;
-  --cta: 165 120 42;
+@theme {
+  --color-bgcolor: rgb(var(--background)/ <alpha-value>);
+  --color-primary: rgb(var(--primary)/ <alpha-value>);
 }
 
-.dark {
-  --background: 174 234 242;
-  --primary: 0 20 20;
+:root, .dark {
+  --background: 1 107 97;
+  --primary: 112 178 178;
   --secondary: 255 255 0;
-  --cta: 153 128 28;
+
+  --color-bgcolor: rgb(var(--background));
+  --color-primary: rgb(var(--primary));
+}
+
+.light {
+  --background: 112 178 178;
+  --primary: 1 107 97;
+  --secondary: 255 255 0;
+
+  --color-bgcolor: rgb(var(--background));
+  --color-primary: rgb(var(--primary));
 }
 
 body {
-  background-color: rgb(var(--background));
-  color: rgb(var(--primary));
   font-family: Arial, Helvetica, sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }

@@ -16,13 +16,13 @@ function NavLinks() {
           <Link
             key={path}
             href={path}
-            className="flex flex-col items-center justify-center relative"
+            className="flex flex-col items-center justify-center relative text-lg"
           >
             <span
               className={`pb-1 transition-colors duration-300 ${
                 isActive
-                  ? "text-gray-400 font-semibold"
-                  : "text-gray-500 hover:text-gray-400"
+                  ? "text-primary/90 font-bold"
+                  : "text-primary/70 hover:text-primary/85 font-semibold"
               }`}
             >
               {label}

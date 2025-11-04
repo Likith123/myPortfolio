@@ -19,28 +19,12 @@ export const metadata: Metadata = {
   title: "Portfolio - Likith Adusumalli",
   description:
     "My personal portfolio website showcasing my projects and skills.",
-  twitter: {
-    card: "summary_large_image",
-    title: "Portfolio - Likith Adusumalli",
-    description:
-      "My personal portfolio website showcasing my projects and skills.",
-    images: ["/portfolio-preview.png"],
-  },
-  openGraph: {
-    title: "Portfolio - Likith Adusumalli",
-    description:
-      "My personal portfolio website showcasing my projects and skills.",
-    images: ["/portfolio-preview.png"],
-    siteName: "Likith Adusumalli Portfolio",
-    locale: "en_US",
-    type: "website",
-  },
 };
 
 
 export default function RootLayout() {
   return (
-    <html lang="en" className="scroll-smooth!">
+    <html lang="en" className="scroll-smooth! text-primary bg-bgcolor">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-screen`}
       >
