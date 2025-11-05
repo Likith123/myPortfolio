@@ -8,7 +8,7 @@ export default function Home({
 }) {
   return (
     <section
-      className="flex w-full h-screen items-center justify-center scroll-mt-16"
+      className="flex w-full h-screen items-center justify-center scroll-mt-16 bg-gradient-to-b from-bgcolor via-accent/10 to-primary/40"
       ref={ref}
       id="home"
     >
@@ -18,9 +18,9 @@ export default function Home({
         initial={{ opacity: 0, y: 50 }}
         transition={{ duration: 0.5 }}
       >
-        <span className="text-primary/80 text-4xl gap-4 flex flex-col ">
+        <span className="text-4xl gap-4 flex flex-col ">
           <h1>Hi there, I&apos;m</h1>
-          <p className="text-primary/90 text-6xl font-bold">
+          <p className="text-primary text-6xl font-bold">
             Likith Adusumalli
           </p>
         </span>
@@ -37,13 +37,13 @@ export default function Home({
         <div className="flex space-x-8 text-lg">
           <Link
             href="/contactMe"
-            className="px-4 py-2 border-2 rounded-full bg-primary text-bgcolor font-semibold"
+            className="px-4 py-2 rounded-full text-bgcolor font-semibold hover:bg-accent bg-gradient-to-b from-primary/50 to-primary/80"
           >
             Contact Me
           </Link>
           <Link
             href=""
-            className="px-4 py-2 border-2 border-primary rounded-full font-semibold"
+            className="px-4 py-2 border-2 rounded-4xl font-semibold hover:text-primary"
           >
             Resume
           </Link>

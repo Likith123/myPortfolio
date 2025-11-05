@@ -2,25 +2,38 @@
 
 @theme {
   --color-bgcolor: rgb(var(--background)/ <alpha-value>);
+  --color-foreground: rgb(var(--foreground)/ <alpha-value>);
   --color-primary: rgb(var(--primary)/ <alpha-value>);
+  --color-secondary: rgb(var(--secondary)/ <alpha-value>);
+  --color-accent: rgb(var(--accent)/ <alpha-value>);
 }
 
-:root, .dark {
-  --background: 1 107 97;
-  --primary: 112 178 178;
-  --secondary: 255 255 0;
+:root, .light {
+  --background: 255, 252, 247;     /* soft peach-white */
+  --foreground: 41, 37, 36;        /* warm dark brown */
+  --primary: 235, 90, 70;          /* coral */
+  --secondary: 119, 67, 219;       /* violet */
+  --accent: 255, 196, 108;         /* amber */
 
   --color-bgcolor: rgb(var(--background));
+  --color-foreground: rgb(var(--foreground));
   --color-primary: rgb(var(--primary));
+  --color-secondary: rgb(var(--secondary));
+  --color-accent: rgb(var(--accent));
 }
 
-.light {
-  --background: 112 178 178;
-  --primary: 1 107 97;
-  --secondary: 255 255 0;
+.dark {
+  --background: 25, 22, 26;        /* deep aubergine */
+  --foreground: 243, 237, 231;     /* off-white */
+  --primary: 255, 118, 96;         /* coral glow */
+  --secondary: 160, 95, 255;       /* electric violet */
+  --accent: 255, 187, 92;          /* amber pop */
 
   --color-bgcolor: rgb(var(--background));
+  --color-foreground: rgb(var(--foreground));
   --color-primary: rgb(var(--primary));
+  --color-secondary: rgb(var(--secondary));
+  --color-accent: rgb(var(--accent));
 }
 
 body {
