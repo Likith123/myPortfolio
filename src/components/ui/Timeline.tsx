@@ -36,7 +36,7 @@ function VerticalTimelineElementComponent({
       icon={Icon}
       iconStyle={{ background: `${iconFillColor}`, color: "#fff" }}
       contentStyle={{
-        background: "#1f2937",
+        background: "rgba(var(--bgcolor), 0.8)",
         color: "#fff",
         boxShadow: "0 4px 15px rgba(0,0,0,0.3)",
         borderRadius: "12px",
@@ -45,16 +45,16 @@ function VerticalTimelineElementComponent({
       date={date}
     >
       <h3 className={`text-xl font-semibold ${titleColor}`}>{title}</h3>
-      <h4 className="text-gray-400">{subtitle}</h4>
+      <h4 className="text-foreground">{subtitle}</h4>
       {description ? (
         <p className="mt-2 text-gray-300 text-sm">{description}</p>
       ) : null}
       {roles
         ? roles.map((roleItem, index) => (
             <div key={index} className="mt-4 border-l-2 border-blue-500 pl-4">
-              <h5 className="font-semibold text-white">{roleItem.role}</h5>
-              <p className="text-sm text-gray-300">{roleItem.duration}</p>
-              <ul className="list-disc list-inside text-gray-400 mt-2 text-sm">
+              <h5 className="font-semibold text-foreground">{roleItem.role}</h5>
+              <p className="text-sm text-foreground/80 italic">{roleItem.duration}</p>
+              <ul className="list-disc list-inside text-foreground mt-2 text-sm">
                 {roleItem.responsibilities.map((responsibility, rIndex) => (
                   <li key={rIndex}>{responsibility}</li>
                 ))}
@@ -68,11 +68,11 @@ function VerticalTimelineElementComponent({
 
 export default function ExperienceTimeline() {
   return (
-    <div className="bg-gray-900 py-10 rounded-md">
-      <h2 className="text-3xl text-center font-bold mb-8 text-white">
+    <div className="bg-bgcolor py-10 rounded-md">
+      <h2 className="text-3xl text-center font-bold mb-8 text-foreground">
         Education &amp; Experience
       </h2>
-      <VerticalTimeline>
+      <VerticalTimeline lineColor="rgb(var(--foreground))">
         {experiences.map((exp, index) => (
           <VerticalTimelineElementComponent
             key={index}

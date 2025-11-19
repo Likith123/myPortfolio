@@ -19,7 +19,7 @@ function Input({ name, label, placeholder, type = "text" }: InputProps) {
         id={name}
         name={name}
         type={type}
-        className="border-2 border-slate-300 rounded-md p-2"
+        className="border border-foreground/80 rounded-md p-2"
         placeholder={placeholder}
         required
       />
@@ -39,7 +39,7 @@ function ContactMe({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
         <MotionDiv className="flex flex-1 flex-col items-center justify-center space-y-16 w-1/2 h-[100vh]">
           <div className="w-3/5 p-8 rounded-md">
             <h2 className="text-2xl font-semibold mb-4">Let&apos;s Connect</h2>
-            <p className="text-blue-100 font-semibold text-xl">
+            <p className="text-foreground/80 font-semibold text-xl">
               Got a project idea, a question, or just want to say hello?
               I&apos;m open to collaborations, freelance opportunities, or even
               a friendly chat.
@@ -62,7 +62,7 @@ function ContactMe({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
           {/* <!-- Vertical line --> */}
           <div className="w-px h-full bg-gray-300"></div>
           {/* <!-- OR text in the middle --> */}
-          <span className="absolute px-2 text-lg font-semibold bg-[#0a0a0a] p-2">
+          <span className="absolute px-2 text-lg font-semibold bg-bgcolor p-2">
             OR
           </span>
         </div>
@@ -86,7 +86,7 @@ function ContactMe({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
                   rows={4}
                   cols={4}
                   maxLength={300}
-                  className="border-2 border-slate-300 rounded-md p-2"
+                  className="border border-foreground/80 rounded-md p-2"
                   placeholder="I feel that you are the right person for my project because..."
                   required
                 />
@@ -94,7 +94,7 @@ function ContactMe({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
               <div className="flex justify-center">
                 <button
                   type="submit"
-                  className="mt-12 w-2/3 px-4 py-2 text-center border-2 border-slate-300 bg-slate-500 rounded-lg hover:bg-slate-700"
+                  className="mt-12 w-2/3 px-4 py-2 text-center border border-primary/80 bg-primary/90 rounded-lg hover:bg-primary/80 text-bgcolor font-semibold"
                 >
                   Submit
                 </button>
