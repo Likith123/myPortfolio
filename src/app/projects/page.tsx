@@ -19,13 +19,13 @@ function Projects({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
         {projectsList.map((project, index) => (
           <div
             key={index}
-            className={`w-9/10 border-1 border-gray-300 flex p-8 rounded-md ${
+            className={`w-9/10 border border-gray-300 flex p-8 rounded-md ${
               index % 2 === 0 ? "flex-row" : "flex-row-reverse"
             }`}
           >
             <div className="flex-3 flex flex-col justify-center">
               <h2 className="text-2xl font-bold pb-2">{project.title}</h2>
-              <p className="italic text-gray-500 pb-2">{project.description}</p>
+              <p className="italic text-foreground/80 pb-2">{project.description}</p>
               <div className="flex gap-8 text-lg items-center mt-4">
                 <Link
                   href={project.link}

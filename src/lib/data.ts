@@ -63,36 +63,120 @@ const experiences = [
 
 // Skills Data
 const programmingLanguagesIcons = [
-  {  name: "JavaScript", color: "hover:fill-[#f7df1e]" },
-  {  name: "TypeScript", color: "hover:fill-[#3178c6]" },
-  {  name: "Python", color: "hover:fill-[#3776ab]" },
-  {  name: "Go", color: "hover:fill-[#00add8]" },
-  {  name: "C", color: "hover:fill-[#010256]" },
-  {  name: "C++", color: "hover:fill-[#010256]" },
-  {  name: "Java", color: "hover:fill-[#010256]" },
+  {
+    color: "hover:fill-[#f7df1e]",
+    Icon: React.createElement(SiJavascript),
+    name: "JavaScript",
+  },
+  {
+    color: "hover:fill-[#3178c6]",
+    Icon: React.createElement(SiTypescript),
+    name: "TypeScript",
+  },
+  {
+    color: "hover:fill-[#3776ab]",
+    Icon: React.createElement(SiPython),
+    name: "Python",
+  },
+  {
+    color: "hover:fill-[#00add8]",
+    Icon: React.createElement(SiGo),
+    name: "Go",
+  },
+  { color: "hover:fill-[#010256]", Icon: React.createElement(SiC), name: "C" },
+  {
+    color: "hover:fill-[#010256]",
+    Icon: React.createElement(SiCplusplus),
+    name: "C++",
+  },
+  {
+    color: "hover:fill-[#010256]",
+    Icon: React.createElement(DiJava),
+    name: "Java",
+  },
 ];
 const frameworksIcons = [
-  {  name: "React", color: "hover:fill-[#61dafb]" },
-  {  name: "Next.js", color: "hover:fill-[#000000]" },
-  {  name: "Tailwind CSS", color: "hover:fill-[#38bdf8]" },
-  {  name: "Node.js", color: "hover:fill-[#68a063]" },
-  {  name: "Express.js", color: "hover:fill-[#000000]" },
+  {
+    color: "hover:fill-[#61dafb]",
+    Icon: React.createElement(SiReact),
+    name: "React",
+  },
+  {
+    color: "hover:fill-[#000000]",
+    Icon: React.createElement(SiNextdotjs),
+    name: "Next.js",
+  },
+  {
+    color: "hover:fill-[#38bdf8]",
+    Icon: React.createElement(SiTailwindcss),
+    name: "Tailwind CSS",
+  },
+  {
+    color: "hover:fill-[#68a063]",
+    Icon: React.createElement(SiNodedotjs),
+    name: "Node.js",
+  },
+  {
+    color: "hover:fill-[#000000]",
+    Icon: React.createElement(SiExpress),
+    name: "Express.js",
+  },
 ];
 const toolsIcons = [
-  {  name: "Git", color: "hover:fill-[#f05033]" },
-  {  name: "Docker", color: "hover:fill-[#2496ed]" },
-  {  name: "MongoDB", color: "hover:fill-[#47a248]" },
-  {  name: "PostgreSQL", color: "hover:fill-[#010256]" },
+  {
+    color: "hover:fill-[#f05033]",
+    Icon: React.createElement(SiGit),
+    name: "Git",
+  },
+  {
+    color: "hover:fill-[#2496ed]",
+    Icon: React.createElement(SiDocker),
+    name: "Docker",
+  },
+  {
+    color: "hover:fill-[#47a248]",
+    Icon: React.createElement(SiMongodb),
+    name: "MongoDB",
+  },
+  {
+    color: "hover:fill-[#010256]",
+    Icon: React.createElement(SiPostgresql),
+    name: "PostgreSQL",
+  },
 ];
 const databaseIcons = [
-  {  name: "MongoDB", color: "hover:fill-[#47a248]" },
-  {  name: "PostgreSQL", color: "hover:fill-[#010256]" },
+  {
+    color: "hover:fill-[#47a248]",
+    Icon: React.createElement(SiJavascript),
+    name: "MongoDB",
+  },
+  {
+    color: "hover:fill-[#010256]",
+    Icon: React.createElement(SiJavascript),
+    name: "PostgreSQL",
+  },
 ];
 const socialIcons = [
-  {  name: "Twitter", color: "hover:text-neutral-500" },
-  {  name: "LinkedIn", color: "hover:text-sky-500" },
-  {  name: "GitHub", color: "hover:text-gray-500" },
-  {  name: "Mail", color: "hover:text-red-500" },
+  {
+    color: "hover:text-neutral-500",
+    Icon: React.createElement(FaXTwitter),
+    name: "Twitter",
+  },
+  {
+    color: "hover:text-sky-500",
+    Icon: React.createElement(FaLinkedin),
+    name: "LinkedIn",
+  },
+  {
+    color: "hover:text-gray-500",
+    Icon: React.createElement(FaGithub),
+    name: "GitHub",
+  },
+  {
+    color: "hover:text-red-500",
+    Icon: React.createElement(Mail),
+    name: "Mail",
+  },
 ];
 
 // Projects Data
@@ -121,6 +205,12 @@ const navItems = [
 ];
 
 export {
-  databaseIcons, experiences, frameworksIcons, navItems, programmingLanguagesIcons, projectsList, socialIcons,
-  toolsIcons
+  databaseIcons,
+  experiences,
+  frameworksIcons,
+  navItems,
+  programmingLanguagesIcons,
+  projectsList,
+  socialIcons,
+  toolsIcons,
 };
