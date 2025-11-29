@@ -18,10 +18,11 @@ export default function Home({
         initial={{ opacity: 0, y: 50 }}
         transition={{ duration: 0.5 }}
       >
-        <span className="text-4xl gap-4 flex flex-col ">
-          <h1>Hi there, I&apos;m</h1>
-          <p className="text-primary text-6xl font-bold">
-            Likith Adusumalli
+        <span className="text-3xl gap-4 flex flex-col ">
+          <h1>Hi there, I&apos;m a</h1>
+          {/* TODO: Add text gradient from left top to bottom to below text only*/}
+          <p className="text-primary text-5xl font-bold">
+            Full-Stack Developer
           </p>
         </span>
         <p>

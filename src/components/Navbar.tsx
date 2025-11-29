@@ -8,7 +8,7 @@ function Navbar() {
       <nav className="">
         <div className="flex items-center justify-between px-16 py-4 border-b border-white/20">
           <div className="text-primary text-2xl font-bold">
-            <Link href="/">Portfolio</Link>
+            <Link href="/"> <span className="mr-3 text-lg p-2 bg-primary text-foreground rounded-lg">LA</span>Likith Adusumalli</Link>
           </div>
           <div className="flex items-center justify-center space-x-4">
             <NavLinks />
