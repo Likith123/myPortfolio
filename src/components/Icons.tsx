@@ -22,7 +22,7 @@ const iconsVariants = {
 
 function Icons({ IconsList }: { IconsList: IconListType }) {
   return (
-    <ul className="w-56 flex flex-wrap gap-4 justify-center items-center">
+    <ul className="bg-primary/20 w-56 aspect-auto flex flex-wrap gap-4 justify-center items-center rounded-2xl p-4">
       {IconsList.map(({ color, Icon, name }, index) => (
         <motion.li
           key={name}

@@ -1,5 +1,5 @@
 import Icons from "@/components/Icons";
-import MotionDiv from "@/components/MotionDiv";
+import { MotionDiv } from "@/components/MotionTags";
 import ExperienceTimeline from "@/components/ui/Timeline";
 import {
   databaseIcons,
@@ -58,7 +58,7 @@ function About({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
       </MotionDiv>
 
       {/* Skills */}
-      <MotionDiv className="bg-primary/20 p-8 rounded-md">
+      <MotionDiv className="p-8 rounded-md">
         <h2 className="text-2xl font-bold text-center py-8">Skills</h2>
         <div className="flex flex-col justify-around items-center space-y-4 md:flex-row md:space-x-4">
           {/* Languages */}
@@ -77,7 +77,7 @@ function About({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
       </MotionDiv>
 
       {/* Experience */}
-      <div className="bg-primary/20 p-8 rounded-md">
+      <div className="p-8">
         <ExperienceTimeline />
       </div>
     </section>

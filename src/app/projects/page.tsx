@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa6";
 
-import MotionDiv from "@/components/MotionDiv";
+import { MotionDiv } from "@/components/MotionTags";
 import { projectsList } from "@/lib/data";
 
 function Projects({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
@@ -25,7 +25,9 @@ function Projects({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
           >
             <div className="flex-3 flex flex-col justify-center">
               <h2 className="text-2xl font-bold pb-2">{project.title}</h2>
-              <p className="italic text-foreground/80 pb-2">{project.description}</p>
+              <p className="italic text-foreground/80 pb-2">
+                {project.description}
+              </p>
               <div className="flex gap-8 text-lg items-center mt-4">
                 <Link
                   href={project.link}

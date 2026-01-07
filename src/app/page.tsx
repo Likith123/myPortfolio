@@ -1,14 +1,19 @@
-import MotionDiv from "@/components/MotionDiv";
+import { MotionDiv, MotionSpan } from "@/components/MotionTags";
+import RotatingText from "@/components/RotatingText";
+import { Download } from "lucide-react";
+
 import Image from "next/image";
 import Link from "next/link";
+
 export default function Home({
   ref,
 }: {
   ref: React.RefObject<HTMLElement | null>;
 }) {
+  const modes = ["Remote", "Hybrid", "On-site"];
   return (
     <section
-      className="flex w-full h-screen items-center justify-center scroll-mt-16 bg-gradient-to-b from-bgcolor via-accent/10 to-primary/40"
+      className="flex w-full h-screen items-center justify-center scroll-mt-16 bg-gradient-to-b from-bgcolor/90 to-bgcolor"
       ref={ref}
       id="home"
     >
@@ -19,35 +24,60 @@ export default function Home({
         transition={{ duration: 0.5 }}
       >
         <span className="text-3xl gap-4 flex flex-col ">
-          <h1>Hi there, I&apos;m a</h1>
+          <h1>
+            Hi there, I&apos;m{" "}
+            <span className="text-primary/90 font-bold">Likith Adusumalli</span>
+          </h1>
           {/* TODO: Add text gradient from left top to bottom to below text only*/}
           <p className="text-primary text-5xl font-bold">
             Full-Stack Developer
           </p>
         </span>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum natus
-          illum corrupti optio omnis voluptas repellat, reiciendis facere odit
-          aut laudantium id eaque ipsam nam accusantium est. Delectus,
-          doloremque quos?
+        <p className="font-medium">
+          I bridge the gap between complex backend logic and seamless frontend
+          experiences <br />
+          using{" "}
+          <span className="text-primary/80 font-semibold">
+            MERN, Next.js, Go, and Java
+          </span>
+          .
         </p>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum natus
-          illum corrupti optio omnis voluptas repellat
+          I build scalable, user-centric web applications that bridge the gap
+          between complex backend logic and seamless frontend experiences.
+          Currently focused on crafting clean code and solving real-world
+          problems with the MERN stack.
         </p>
-        <div className="flex space-x-8 text-lg">
+
+        <p className="text-lg font-medium flex items-center gap-2">
+          Open to <RotatingText modes={modes} /> opportunities globally.
+        </p>
+        <div className="flex flex-wrap gap-6 pt-4">
           <Link
             href="/contactMe"
-            className="px-4 py-2 rounded-full text-bgcolor font-semibold hover:bg-accent bg-gradient-to-b from-primary/50 to-primary/80"
+            className="px-8 py-3 rounded-full text-white font-bold transition-all bg-gradient-to-r from-primary/90 to-primary hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5 active:scale-95 text-center"
           >
-            Contact Me
+            Let&apos;s Work Together
           </Link>
-          <Link
-            href=""
-            className="px-4 py-2 border-2 rounded-4xl font-semibold hover:text-primary"
+
+          <a
+            href="/Likith_Adusumalli_Resume.pdf"
+            download="Likith_Adusumalli_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group px-8 py-3 border-2 border-primary/20 rounded-full font-bold text-primary 
+                     hover:bg-primary/5 hover:border-primary transition-all 
+                     flex items-center justify-center cursor-pointer active:scale-95"
           >
             Resume
-          </Link>
+            <MotionSpan
+              className="ml-2"
+              animate={{ y: [0, 2, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <Download size={20} />
+            </MotionSpan>
+          </a>
         </div>
       </MotionDiv>
       <MotionDiv

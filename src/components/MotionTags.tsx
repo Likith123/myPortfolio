@@ -15,4 +15,12 @@ function MotionDiv({ children, className, ...props }: MotionWrapperProps) {
   );
 }
 
-export default MotionDiv;
+function MotionSpan({ children, className, ...props }: MotionWrapperProps) {
+  return (
+    <motion.span className={className} {...props}>
+      {children}
+    </motion.span>
+  );
+}
+
+export { MotionDiv, MotionSpan };

@@ -2,7 +2,7 @@ import { socialIcons } from "@/lib/data";
 import Form from "next/form";
 
 import Icons from "@/components/Icons";
-import MotionDiv from "@/components/MotionDiv";
+import { MotionDiv } from "@/components/MotionTags";
 
 type InputProps = {
   name: string;
