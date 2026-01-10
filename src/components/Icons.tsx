@@ -2,49 +2,88 @@
 
 import { motion } from "motion/react";
 import Link from "next/link";
+
 type IconListType = {
-  // Icon: any;
   name: string;
   Icon: React.ReactElement;
   color?: string;
+  groupTitle?: string;
 }[];
 
 const iconsVariants = {
-  initial: {
-    opacity: 0,
-    y: 20,
-  },
-  animate: {
-    opacity: 1,
-    y: 0,
-  },
+  initial: { opacity: 0, y: 15 },
+  animate: { opacity: 1, y: 0 },
 };
 
-function Icons({ IconsList }: { IconsList: IconListType }) {
+function Icons({
+  IconsList,
+  groupTitle,
+}: {
+  IconsList: IconListType;
+  groupTitle: string;
+}) {
+  const slumpClipPath = {
+    clipPath: `polygon(
+      0% 0%, 
+      25% 0%, 
+      28% 2%, 32% 8%, 35% 10%, 65% 10%, 68% 8%, 72% 2%, 75% 0%, 
+      100% 0%, 
+      100% 100%, 
+      0% 100%
+    )`,
+  };
+
   return (
-    <ul className="bg-primary/20 w-56 aspect-auto flex flex-wrap gap-4 justify-center items-center rounded-2xl p-4">
-      {IconsList.map(({ color, Icon, name }, index) => (
-        <motion.li
-          key={name}
-          variants={iconsVariants}
-          whileInView="animate"
-          initial="initial"
-          transition={{ delay: 0.05 * index }}
-          viewport={{
-            once: true,
-          }}
-        >
-          {/* <Icon className={`size-8 ${color}`} xlinkTitle={name} /> */}
-          <Link
-            className="text-sm border px-2 py-1 border-foreground/60 rounded-md flex items-center hover:scale-105 transition-transform duration-200 space-x-2"
-            href=""
+    <div className="flex flex-col items-center relative pt-6">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20">
+        <span className="bg-bgcolor px-6 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-primary border border-primary/20 rounded-full shadow-sm whitespace-nowrap">
+          {groupTitle}
+        </span>
+      </div>
+
+      <ul
+        style={slumpClipPath}
+        className="bg-primary/5 border border-primary/15 w-80 min-h-[220px] 
+                   flex flex-wrap gap-3 justify-center items-center 
+                   rounded-[3rem] p-6 pt-12 transition-all duration-300 
+                   hover:bg-primary/[0.08] shadow-sm"
+      >
+        {IconsList.map(({ color, Icon, name }, index) => (
+          <motion.li
+            key={name}
+            variants={iconsVariants}
+            whileInView="animate"
+            initial="initial"
+            whileHover={{ scale: 1.05, y: -2 }}
+            transition={{
+              delay: 0.05 * index,
+              type: "spring",
+              stiffness: 260,
+              damping: 20,
+            }}
+            viewport={{ once: true }}
+            className="list-none"
           >
-            <span>{name}</span>
-            <span>{Icon}</span>
-          </Link>
-        </motion.li>
-      ))}
-    </ul>
+            <Link
+              className="group text-[13px] font-semibold border border-foreground/15 px-3 py-1.5 rounded-xl 
+                         flex items-center bg-bgcolor/60 backdrop-blur-md 
+                         hover:border-primary/40 hover:text-primary transition-all duration-300 
+                         space-x-2 shadow-sm"
+              href="#"
+            >
+              <span className="tracking-tight text-foreground/80 group-hover:text-primary transition-colors">
+                {name}
+              </span>
+              <span
+                className={`text-lg opacity-70 group-hover:opacity-100 transition-opacity ${color}`}
+              >
+                {Icon}
+              </span>
+            </Link>
+          </motion.li>
+        ))}
+      </ul>
+    </div>
   );
 }
 

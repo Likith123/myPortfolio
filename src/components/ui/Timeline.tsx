@@ -31,53 +31,80 @@ function VerticalTimelineElementComponent({
   description,
   roles,
 }: VerticalTimelineElementProps) {
+  
+  const accentBorder = titleColor.includes("primary") 
+    ? "border-primary/40" 
+    : "border-secondary/40";
+
   return (
     <VerticalTimelineElement
       icon={Icon}
-      iconStyle={{ background: `${iconFillColor}`, color: "#fff" }}
-      contentStyle={{
-        background: "rgba(var(--bgcolor), 0.8)",
-        color: "#fff",
-        boxShadow: "0 4px 15px rgba(0,0,0,0.3)",
-        borderRadius: "12px",
+      iconStyle={{ 
+        background: iconFillColor,
+        color: "rgb(var(--bgcolor))", 
+        boxShadow: `0 0 0 4px rgb(var(--bgcolor)), 0 4px 10px rgba(0,0,0,0.1)` 
       }}
-      contentArrowStyle={{ borderRight: "7px solid #1f2937" }}
+      contentStyle={{
+        background: "rgba(var(--primary), 0.03)",
+        color: "rgb(var(--foreground))",
+        boxShadow: "none",
+        border: "1px solid rgba(var(--primary), 0.1)",
+        borderRadius: "2.5rem",
+        padding: "2rem"
+      }}
+      contentArrowStyle={{ borderRight: "7px solid rgba(var(--primary), 0.1)" }}
       date={date}
+      dateClassName="text-foreground/50 font-bold px-4"
     >
-      <h3 className={`text-xl font-semibold ${titleColor}`}>{title}</h3>
-      <h4 className="text-foreground">{subtitle}</h4>
-      {description ? (
-        <p className="mt-2 text-gray-300 text-sm">{description}</p>
-      ) : null}
-      {roles
-        ? roles.map((roleItem, index) => (
-            <div key={index} className="mt-4 border-l-2 border-blue-500 pl-4">
-              <h5 className="font-semibold text-foreground">{roleItem.role}</h5>
-              <p className="text-sm text-foreground/80 italic">{roleItem.duration}</p>
-              <ul className="list-disc list-inside text-foreground mt-2 text-sm">
+      <h3 className={`text-xl font-black tracking-tight ${titleColor}`}>{title}</h3>
+      <h4 className="text-foreground/60 font-medium text-sm italic mb-4">{subtitle}</h4>
+      
+      {description && (
+        <p className="text-foreground/80 text-sm leading-relaxed !font-normal">
+          {description}
+        </p>
+      )}
+
+      {roles && (
+        <div className="space-y-6 mt-6">
+          {roles.map((roleItem, index) => (
+            <div key={index} className={`border-l-2 ${accentBorder} pl-5 py-1`}>
+              <h5 className="font-bold text-foreground leading-none">{roleItem.role}</h5>
+              <p className="text-[10px] uppercase tracking-widest text-foreground/40 mt-2 font-black">
+                {roleItem.duration}
+              </p>
+              <ul className="mt-3 space-y-2">
                 {roleItem.responsibilities.map((responsibility, rIndex) => (
-                  <li key={rIndex}>{responsibility}</li>
+                  <li key={rIndex} className="text-sm text-foreground/70 flex gap-2">
+                    <span className="text-primary/50">•</span>
+                    {responsibility}
+                  </li>
                 ))}
               </ul>
             </div>
-          ))
-        : null}
+          ))}
+        </div>
+      )}
     </VerticalTimelineElement>
   );
 }
 
 export default function ExperienceTimeline() {
   return (
-    <div className="bg-bgcolor py-10 rounded-md">
-      <h2 className="text-3xl text-center font-bold mb-8 text-foreground">
-        Education &amp; Experience
-      </h2>
-      <VerticalTimeline lineColor="rgb(var(--foreground))">
+    <div className="bg-bgcolor py-24 px-4 overflow-hidden">
+      <div className="max-w-4xl mx-auto mb-20 text-center">
+        <h2 className="text-4xl font-black text-foreground tracking-tighter">
+          My <span className="text-primary italic">Journey</span>
+        </h2>
+        <p className="text-foreground/50 mt-2 font-medium">Education & Professional Experience</p>
+      </div>
+
+      <VerticalTimeline lineColor="rgba(var(--primary), 0.15)">
         {experiences.map((exp, index) => (
           <VerticalTimelineElementComponent
             key={index}
             Icon={exp.icon}
-            iconFillColor={exp.iconFillColor}
+            iconFillColor={exp.iconFillColor} 
             title={exp.title}
             titleColor={exp.titleColor}
             subtitle={exp.subtitle}

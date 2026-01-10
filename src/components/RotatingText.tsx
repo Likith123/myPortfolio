@@ -13,7 +13,7 @@ function RotatingText({ modes }: { modes: string[] }) {
     return () => clearInterval(timer);
   }, []);
   return (
-    <span className="text-primary relative inline-flex flex-col overflow-hidden h-auto w-20 text-center px-2 bg-primary/5 rounded-md blur-backdrop-filter backdrop-filter backdrop-blur-lg">
+    <span className="text-primary relative inline-flex flex-col overflow-hidden h-auto w-20 text-center px-2 bg-primary/5 border border-primary/15 rounded-md blur-backdrop-filter backdrop-filter backdrop-blur-lg">
       <AnimatePresence mode="wait">
         <MotionSpan
           key={index}

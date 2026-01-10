@@ -24,20 +24,19 @@ import {
 const experiences = [
   {
     icon: React.createElement(GraduationCap),
-    iconFillColor: "#16a34a",
-    title: "B.Tech in Computer Science and Engineering",
-    titleColor: "text-green-400",
-    subtitle:
-      "Velgapudi Ramakrishna Siddhartha Engineering College, Vijayawada, India",
+    iconFillColor: "rgb(var(--secondary))",
+    title: "Velgapudi Ramakrishna Siddhartha Engineering College (VRSEC)",
+    titleColor: "text-secondary",
+    subtitle: "Vijayawada, India",
     date: "2017 - 2021",
     description:
-      "Graduated with distinction, specializing in software development and web technologies.",
+      "Graduated B.Tech in Computer Science and Engineering with distinction, specializing in software development and web technologies.",
   },
   {
     icon: React.createElement(Briefcase),
-    iconFillColor: "#2563eb",
+    iconFillColor: "rgb(var(--primary))",
     title: "EdgeVerve Systems Limited",
-    titleColor: "text-blue-400",
+    titleColor: "text-primary",
     subtitle: "Bangalore, India",
     date: "Oct 2021 - Present",
     roles: [
@@ -64,94 +63,94 @@ const experiences = [
 // Skills Data
 const programmingLanguagesIcons = [
   {
-    color: "hover:fill-[#f7df1e]",
+    color: "hover:text-[#f7df1e]",
     Icon: React.createElement(SiJavascript),
     name: "JavaScript",
   },
   {
-    color: "hover:fill-[#3178c6]",
+    color: "hover:text-[#3178c6]",
     Icon: React.createElement(SiTypescript),
     name: "TypeScript",
   },
   {
-    color: "hover:fill-[#3776ab]",
+    color: "hover:text-[#3776ab]",
     Icon: React.createElement(SiPython),
     name: "Python",
   },
   {
-    color: "hover:fill-[#00add8]",
+    color: "hover:text-[#00add8]",
     Icon: React.createElement(SiGo),
     name: "Go",
   },
-  { color: "hover:fill-[#010256]", Icon: React.createElement(SiC), name: "C" },
+  { color: "hover:text-[#010256]", Icon: React.createElement(SiC), name: "C" },
   {
-    color: "hover:fill-[#010256]",
+    color: "hover:text-[#010256]",
     Icon: React.createElement(SiCplusplus),
     name: "C++",
   },
   {
-    color: "hover:fill-[#010256]",
+    color: "hover:text-[#010256]",
     Icon: React.createElement(DiJava),
     name: "Java",
   },
 ];
 const frameworksIcons = [
   {
-    color: "hover:fill-[#61dafb]",
+    color: "hover:text-[#61dafb]",
     Icon: React.createElement(SiReact),
     name: "React",
   },
   {
-    color: "hover:fill-[#000000]",
+    color: "hover:text-[#000000]",
     Icon: React.createElement(SiNextdotjs),
     name: "Next.js",
   },
   {
-    color: "hover:fill-[#38bdf8]",
+    color: "hover:text-[#38bdf8]",
     Icon: React.createElement(SiTailwindcss),
     name: "Tailwind CSS",
   },
   {
-    color: "hover:fill-[#68a063]",
-    Icon: React.createElement(SiNodedotjs),
-    name: "Node.js",
-  },
-  {
-    color: "hover:fill-[#000000]",
-    Icon: React.createElement(SiExpress),
-    name: "Express.js",
+    color: "hover:text-[#38bdf8]",
+    Icon: React.createElement(SiTailwindcss),
+    name: "Framer Motion",
   },
 ];
 const toolsIcons = [
   {
-    color: "hover:fill-[#f05033]",
-    Icon: React.createElement(SiGit),
-    name: "Git",
+    color: "hover:text-[#68a063]",
+    Icon: React.createElement(SiNodedotjs),
+    name: "Node.js",
   },
   {
-    color: "hover:fill-[#2496ed]",
+    color: "hover:text-[#000000]",
+    Icon: React.createElement(SiExpress),
+    name: "Express.js",
+  },
+  {
+    color: "hover:text-[#2496ed]",
     Icon: React.createElement(SiDocker),
     name: "Docker",
   },
   {
-    color: "hover:fill-[#47a248]",
+    color: "hover:text-[#47a248]",
     Icon: React.createElement(SiMongodb),
     name: "MongoDB",
   },
   {
-    color: "hover:fill-[#010256]",
+    color: "hover:text-[#010256]",
     Icon: React.createElement(SiPostgresql),
     name: "PostgreSQL",
   },
 ];
 const databaseIcons = [
   {
-    color: "hover:fill-[#47a248]",
+    color: "hover:text-[#47a248]",
     Icon: React.createElement(SiJavascript),
     name: "MongoDB",
   },
   {
-    color: "hover:fill-[#010256]",
+    color: "hover:text-[#010256]",
     Icon: React.createElement(SiJavascript),
     name: "PostgreSQL",
   },
@@ -205,7 +204,6 @@ const navItems = [
 ];
 
 export {
-  databaseIcons,
   experiences,
   frameworksIcons,
   navItems,

@@ -19,7 +19,7 @@ function Input({ name, label, placeholder, type = "text" }: InputProps) {
         id={name}
         name={name}
         type={type}
-        className="border border-foreground/80 rounded-md p-2"
+        className="bg-bgcolor border border-foreground/10 rounded-2xl p-4 outline-none focus:border-primary/50 transition-all resize-none"
         placeholder={placeholder}
         required
       />
@@ -30,47 +30,40 @@ function Input({ name, label, placeholder, type = "text" }: InputProps) {
 function ContactMe({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
   return (
     <section
-      className="w-full h-[100vh] md:flex-row scroll-mt-16"
+      className="w-full h-auto py-16 md:pb-24 flex flex-col items-center justify-start scroll-mt-16 bg-bgcolor"
       ref={ref}
       id="contactMe"
     >
-      {/* <h1 className="text-4xl text-center font-bold mt-8">Contact Me</h1> */}
-      <div className="flex flex-col w-full h-[100vh] md:flex-row">
-        <MotionDiv className="flex flex-1 flex-col items-center justify-center space-y-16 w-1/2 h-[100vh]">
-          <div className="w-3/5 p-8 rounded-md">
-            <h2 className="text-2xl font-semibold mb-4">Let&apos;s Connect</h2>
-            <p className="text-foreground/80 font-semibold text-xl">
-              Got a project idea, a question, or just want to say hello?
-              I&apos;m open to collaborations, freelance opportunities, or even
-              a friendly chat.
+      <h2 className="text-4xl font-black text-center mb-12 tracking-tighter">
+        Let&apos;s <span className="text-primary italic">Connect</span>
+      </h2>
+
+      <div className="flex flex-col w-full md:flex-row items-stretch px-6 max-w-7xl mx-auto gap-12">
+        <MotionDiv className="flex flex-1 flex-col items-center justify-center space-y-8">
+          <div className="w-full max-w-md">
+            <p className="text-foreground/80 font-medium text-lg leading-relaxed">
+              Got a project idea, a question, or just want to say hello? 
+              I&apos;m open to collaborations, freelance opportunities, or even a friendly chat.
             </p>
-          </div>
-          <div className="w-3/5 p-8 rounded-md">
-            {/* social icons like Github, LinkedIn, Twitter */}
-            <p className="font-bold text-lg mb-2">
+            <p className="text-foreground/80 font-medium text-lg leading-relaxed mt-16 mb-2">
               I&apos;m reachable on the following social platforms.
             </p>
-            <div className="flex gap-6 mt-4">
-              <Icons IconsList={socialIcons} />
+            <div className="mt-4">
+               <Icons IconsList={socialIcons} groupTitle="Social" />
             </div>
           </div>
         </MotionDiv>
 
-        {/* Divider */}
-
-        <div className="relative px-8 flex items-center justify-center md:py-48">
-          {/* <!-- Vertical line --> */}
-          <div className="w-px h-full bg-gray-300"></div>
-          {/* <!-- OR text in the middle --> */}
-          <span className="absolute px-2 text-lg font-semibold bg-bgcolor p-2">
+        <div className="relative hidden md:flex items-center justify-center px-4">
+          <div className="w-px h-72 bg-gradient-to-b from-transparent via-primary/20 to-transparent"></div>
+          <span className="absolute px-2 text-xs font-black bg-bgcolor py-1 border border-primary/10 rounded-full text-primary tracking-widest shadow-sm">
             OR
           </span>
         </div>
 
-        {/* Contact Form */}
-        <MotionDiv className="flex flex-1 flex-col items-center justify-center space-y-16 w-1/2 h-[100vh]">
-          <div className="w-3/5 p-8 rounded-md">
-            <Form action="/search" className="flex flex-col space-y-4">
+        <MotionDiv className="flex flex-1 flex-col items-center justify-center w-full">
+           <div className="w-full max-w-md p-8 rounded-[2.5rem] bg-primary/[0.02] border border-primary/10">
+            <Form action="#" className="flex flex-col space-y-4">
               <Input name="fullName" label="Full Name" placeholder="John Doe" />
               <Input
                 name="email"
@@ -84,21 +77,17 @@ function ContactMe({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
                   id="message"
                   name="message"
                   rows={4}
-                  cols={4}
-                  maxLength={300}
-                  className="border border-foreground/80 rounded-md p-2"
+                  className="bg-bgcolor border border-foreground/10 rounded-2xl p-4 outline-none focus:border-primary/50 transition-all resize-none placeholder:text-foreground/40"
                   placeholder="I feel that you are the right person for my project because..."
                   required
                 />
               </div>
-              <div className="flex justify-center">
-                <button
-                  type="submit"
-                  className="mt-12 w-2/3 px-4 py-2 text-center border border-primary/80 bg-primary/90 rounded-lg hover:bg-primary/80 text-bgcolor font-semibold"
-                >
-                  Submit
-                </button>
-              </div>
+              <button
+                type="submit"
+                className="w-full py-4 bg-primary text-bgcolor font-bold rounded-2xl shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform uppercase tracking-widest text-[10px]"
+              >
+                Submit
+              </button>
             </Form>
           </div>
         </MotionDiv>

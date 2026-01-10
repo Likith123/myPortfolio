@@ -13,7 +13,7 @@ function Projects({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
       ref={ref}
       id="projects"
     >
-      <h1 className="text-3xl font-bold text-center mt-8">Projects</h1>
+      <h1 className="text-3xl font-bold text-center mt-8">My <span className="text-primary italic">Projects</span></h1>
       <MotionDiv className="flex flex-col items-center justify-center gap-4">
         {/* Project listings will go here */}
         {projectsList.map((project, index) => (

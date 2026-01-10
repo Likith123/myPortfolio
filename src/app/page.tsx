@@ -37,7 +37,7 @@ export default function Home({
           I bridge the gap between complex backend logic and seamless frontend
           experiences <br />
           using{" "}
-          <span className="text-primary/80 font-semibold">
+          <span className="text-primary/90 font-semibold">
             MERN, Next.js, Go, and Java
           </span>
           .
@@ -49,7 +49,7 @@ export default function Home({
           problems with the MERN stack.
         </p>
 
-        <p className="text-lg font-medium flex items-center gap-2">
+        <p className="text-lg font-medium items-center">
           Open to <RotatingText modes={modes} /> opportunities globally.
         </p>
         <div className="flex flex-wrap gap-6 pt-4">
