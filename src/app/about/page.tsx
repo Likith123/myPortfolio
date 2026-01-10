@@ -2,9 +2,9 @@ import Icons from "@/components/Icons";
 import { MotionDiv } from "@/components/MotionTags";
 import ExperienceTimeline from "@/components/ui/Timeline";
 import {
-  frameworksIcons,
+  backEndIcons,
+  frontEndIcons,
   programmingLanguagesIcons,
-  toolsIcons,
 } from "@/lib/data";
 
 function About({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
@@ -136,16 +136,18 @@ function About({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
 
       {/* Skills */}
       <MotionDiv className="p-8 rounded-md">
-        <h2 className="text-2xl font-bold text-center py-8">Skills</h2>
+        <h2 className="text-2xl font-bold text-center py-8">
+          My <span className="text-primary italic">Skills</span>
+        </h2>
         <div className="flex flex-col justify-around items-center space-y-4 md:flex-row md:space-x-4">
           {/* Languages */}
           <Icons IconsList={programmingLanguagesIcons} groupTitle="Languages" />
 
           {/* Frontend */}
-          <Icons IconsList={frameworksIcons} groupTitle="Frontend" />
+          <Icons IconsList={frontEndIcons} groupTitle="Frontend" />
 
           {/* Backend */}
-          <Icons IconsList={toolsIcons} groupTitle="Backend" />
+          <Icons IconsList={backEndIcons} groupTitle="Backend" />
         </div>
       </MotionDiv>
 

@@ -94,7 +94,7 @@ const programmingLanguagesIcons = [
     name: "Java",
   },
 ];
-const frameworksIcons = [
+const frontEndIcons = [
   {
     color: "hover:text-[#61dafb]",
     Icon: React.createElement(SiReact),
@@ -116,7 +116,7 @@ const frameworksIcons = [
     name: "Framer Motion",
   },
 ];
-const toolsIcons = [
+const backEndIcons = [
   {
     color: "hover:text-[#68a063]",
     Icon: React.createElement(SiNodedotjs),
@@ -204,11 +204,11 @@ const navItems = [
 ];
 
 export {
+  backEndIcons,
   experiences,
-  frameworksIcons,
+  frontEndIcons,
   navItems,
   programmingLanguagesIcons,
   projectsList,
   socialIcons,
-  toolsIcons,
 };
