@@ -48,9 +48,9 @@ function Icons({
       <ul
         style={{ clipPath: "url(#slumpClip)" }}
         className={`bg-primary/5 border border-primary/15 w-${width} min-h-[${height}] 
-                   flex ${flexStyle} gap-3 justify-center items-center 
+                   flex gap-3 justify-center items-center 
                    rounded-[3rem] p-6 pt-12 transition-all duration-300 
-                   hover:bg-primary/8 shadow-sm`}
+                   hover:bg-primary/8 shadow-sm ${flexStyle}`}
       >
         {IconsList.map(({ color, Icon, name }, index) => (
           <motion.li
