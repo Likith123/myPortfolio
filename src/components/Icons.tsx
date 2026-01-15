@@ -22,19 +22,17 @@ function Icons({
   IconsList: IconListType;
   groupTitle: string;
 }) {
-  const slumpClipPath = {
-    clipPath: `polygon(
-      0% 0%, 
-      25% 0%, 
-      28% 2%, 32% 8%, 35% 10%, 65% 10%, 68% 8%, 72% 2%, 75% 0%, 
-      100% 0%, 
-      100% 100%, 
-      0% 100%
-    )`,
-  };
+  const smoothNotchPath = `M 0,0 L 0.25,0 Q 0.27,0 0.28,0.02 L 0.32,0.08 Q 0.335,0.1 0.35,0.1 L 0.65,0.1 Q 0.665,0.1 0.68,0.08 L 0.72,0.02 Q 0.73,0 0.75,0 L 1,0 L 1,1 L 0,1 Z`;
 
   return (
     <div className="flex flex-col items-center relative pt-6">
+      <motion.svg width="0" height="0" className="absolute">
+        <defs>
+          <clipPath id="slumpClip" clipPathUnits="objectBoundingBox">
+            <motion.path d={smoothNotchPath} initial={false} />
+          </clipPath>
+        </defs>
+      </motion.svg>
       <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20">
         <span className="bg-bgcolor px-6 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-primary border border-primary/20 rounded-full shadow-sm whitespace-nowrap">
           {groupTitle}
@@ -42,7 +40,7 @@ function Icons({
       </div>
 
       <ul
-        style={slumpClipPath}
+        style={{ clipPath: "url(#slumpClip)" }}
         className="bg-primary/5 border border-primary/15 w-80 min-h-[220px] 
                    flex flex-wrap gap-3 justify-center items-center 
                    rounded-[3rem] p-6 pt-12 transition-all duration-300 

@@ -30,17 +30,17 @@ function Input({ name, label, placeholder, type = "text" }: InputProps) {
 function ContactMe({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
   return (
     <section
-      className="w-full h-auto py-16 md:pb-24 flex flex-col items-center justify-start scroll-mt-16 bg-bgcolor"
+      className="w-full h-auto py-14 md:pb-24 flex flex-col items-center justify-start scroll-mt-16 bg-bgcolor"
       ref={ref}
       id="contactMe"
     >
-      <h2 className="text-4xl font-black text-center mb-12 tracking-tighter">
+      <h1 className="text-4xl font-black text-center mb-12 tracking-tighter">
         Let&apos;s <span className="text-primary italic">Connect</span>
-      </h2>
+      </h1>
 
       <div className="flex flex-col w-full md:flex-row items-stretch px-6 max-w-7xl mx-auto gap-12">
         <MotionDiv className="flex flex-1 flex-col items-center justify-center space-y-8">
-          <div className="w-full max-w-md">
+          <div className="w-full max-w-md flex flex-col items-center justify-center">
             <p className="text-foreground/80 font-medium text-lg leading-relaxed">
               Got a project idea, a question, or just want to say hello? 
               I&apos;m open to collaborations, freelance opportunities, or even a friendly chat.
@@ -62,7 +62,7 @@ function ContactMe({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
         </div>
 
         <MotionDiv className="flex flex-1 flex-col items-center justify-center w-full">
-           <div className="w-full max-w-md p-8 rounded-[2.5rem] bg-primary/[0.02] border border-primary/10">
+           <div className="w-full max-w-md p-8 rounded-[2.5rem] bg-primary/5 border border-primary/15">
             <Form action="#" className="flex flex-col space-y-4">
               <Input name="fullName" label="Full Name" placeholder="John Doe" />
               <Input

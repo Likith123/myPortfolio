@@ -14,7 +14,7 @@ function About({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
       ref={ref}
       id="about"
     >
-      <h1 className="text-3xl font-bold text-center mt-8 tracking-tighter">
+      <h1 className="text-4xl font-bold text-center mt-8 tracking-tighter">
         About <span className="text-primary italic">Me</span>
       </h1>
       {/* About Myself */}
@@ -27,9 +27,6 @@ function About({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
         {/* Will update if required*/}
         <div className="lg:col-span-7 space-y-8">
           <div>
-            <h3 className="text-primary font-bold tracking-widest uppercase text-sm mb-2">
-              My Journey
-            </h3>
             <h2 className="text-4xl font-bold text-foreground leading-tight">
               Turning &quot;What if?&quot; into <br />
               <span className="text-primary">Reliable Software.</span>
@@ -136,9 +133,9 @@ function About({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
 
       {/* Skills */}
       <MotionDiv className="p-8 rounded-md">
-        <h2 className="text-2xl font-bold text-center py-8">
+        <h1 className="text-4xl font-bold text-center py-8">
           My <span className="text-primary italic">Skills</span>
-        </h2>
+        </h1>
         <div className="flex flex-col justify-around items-center space-y-4 md:flex-row md:space-x-4">
           {/* Languages */}
           <Icons IconsList={programmingLanguagesIcons} groupTitle="Languages" />

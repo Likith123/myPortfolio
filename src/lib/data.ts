@@ -19,14 +19,15 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
+import { TbBrandFramerMotion } from "react-icons/tb";
 
 // Experience Data
 const experiences = [
   {
     icon: React.createElement(GraduationCap),
-    iconFillColor: "rgb(var(--secondary))",
+    iconFillColor: "rgb(var(--primary))",
     title: "Velgapudi Ramakrishna Siddhartha Engineering College (VRSEC)",
-    titleColor: "text-secondary",
+    titleColor: "text-primary",
     subtitle: "Vijayawada, India",
     date: "2017 - 2021",
     description:
@@ -112,7 +113,7 @@ const frontEndIcons = [
   },
   {
     color: "hover:text-[#38bdf8]",
-    Icon: React.createElement(SiTailwindcss),
+    Icon: React.createElement(TbBrandFramerMotion),
     name: "Framer Motion",
   },
 ];
