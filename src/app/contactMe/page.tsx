@@ -49,13 +49,13 @@ function ContactMe({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
               I&apos;m reachable on the following social platforms.
             </p>
             <div className="mt-4">
-               <Icons IconsList={socialIcons} groupTitle="Social" />
+               <Icons IconsList={socialIcons} groupTitle="Social" width={200} height={80} flexStyle="flex-wrap md:flex-nowrap"/>
             </div>
           </div>
         </MotionDiv>
 
         <div className="relative hidden md:flex items-center justify-center px-4">
-          <div className="w-px h-72 bg-gradient-to-b from-transparent via-primary/20 to-transparent"></div>
+          <div className="w-px h-72 bg-linear-to-b from-transparent via-primary/20 to-transparent"></div>
           <span className="absolute px-2 text-xs font-black bg-bgcolor py-1 border border-primary/10 rounded-full text-primary tracking-widest shadow-sm">
             OR
           </span>

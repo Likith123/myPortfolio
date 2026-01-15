@@ -18,9 +18,15 @@ const iconsVariants = {
 function Icons({
   IconsList,
   groupTitle,
+  width = 80,
+  height = 220,
+  flexStyle = "flex-wrap",
 }: {
   IconsList: IconListType;
   groupTitle: string;
+  width?: number;
+  height?: number;
+  flexStyle?: string;
 }) {
   const smoothNotchPath = `M 0,0 L 0.25,0 Q 0.27,0 0.28,0.02 L 0.32,0.08 Q 0.335,0.1 0.35,0.1 L 0.65,0.1 Q 0.665,0.1 0.68,0.08 L 0.72,0.02 Q 0.73,0 0.75,0 L 1,0 L 1,1 L 0,1 Z`;
 
@@ -41,10 +47,10 @@ function Icons({
 
       <ul
         style={{ clipPath: "url(#slumpClip)" }}
-        className="bg-primary/5 border border-primary/15 w-80 min-h-[220px] 
-                   flex flex-wrap gap-3 justify-center items-center 
+        className={`bg-primary/5 border border-primary/15 w-${width} min-h-[${height}] 
+                   flex ${flexStyle} gap-3 justify-center items-center 
                    rounded-[3rem] p-6 pt-12 transition-all duration-300 
-                   hover:bg-primary/[0.08] shadow-sm"
+                   hover:bg-primary/8 shadow-sm`}
       >
         {IconsList.map(({ color, Icon, name }, index) => (
           <motion.li

@@ -136,7 +136,7 @@ function About({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
         <h1 className="text-4xl font-bold text-center py-8">
           My <span className="text-primary italic">Skills</span>
         </h1>
-        <div className="flex flex-col justify-around items-center space-y-4 md:flex-row md:space-x-4">
+        <div className="flex flex-col justify-around items-start space-y-4 md:flex-row md:space-x-4">
           {/* Languages */}
           <Icons IconsList={programmingLanguagesIcons} groupTitle="Languages" />
 

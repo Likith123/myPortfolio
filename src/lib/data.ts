@@ -7,7 +7,6 @@ import {
   SiCplusplus,
   SiDocker,
   SiExpress,
-  SiGit,
   SiGo,
   SiJavascript,
   SiMongodb,
@@ -26,7 +25,7 @@ const experiences = [
   {
     icon: React.createElement(GraduationCap),
     iconFillColor: "rgb(var(--primary))",
-    title: "Velgapudi Ramakrishna Siddhartha Engineering College (VRSEC)",
+    title: "Velagapudi Ramakrishna Siddhartha Engineering College (VRSEC)",
     titleColor: "text-primary",
     subtitle: "Vijayawada, India",
     date: "2017 - 2021",
@@ -141,18 +140,6 @@ const backEndIcons = [
   {
     color: "hover:text-[#010256]",
     Icon: React.createElement(SiPostgresql),
-    name: "PostgreSQL",
-  },
-];
-const databaseIcons = [
-  {
-    color: "hover:text-[#47a248]",
-    Icon: React.createElement(SiJavascript),
-    name: "MongoDB",
-  },
-  {
-    color: "hover:text-[#010256]",
-    Icon: React.createElement(SiJavascript),
     name: "PostgreSQL",
   },
 ];
