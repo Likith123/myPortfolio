@@ -1,5 +1,5 @@
 "use client";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 
 import About from "@/app/about/page";
@@ -8,7 +8,6 @@ import Home from "@/app/page";
 import Projects from "@/app/projects/page";
 
 function Sections() {
-  const router = useRouter();
   const pathname = usePathname();
 
   const homeRef = useRef<HTMLElement | null>(null);
