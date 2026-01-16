@@ -18,8 +18,8 @@ const iconsVariants = {
 function Icons({
   IconsList,
   groupTitle,
-  width = 80,
-  height = 220,
+  width,
+  height,
   flexStyle = "flex-wrap",
 }: {
   IconsList: IconListType;
@@ -28,17 +28,22 @@ function Icons({
   height?: number;
   flexStyle?: string;
 }) {
-  const smoothNotchPath = `M 0,0 L 0.25,0 Q 0.27,0 0.28,0.02 L 0.32,0.08 Q 0.335,0.1 0.35,0.1 L 0.65,0.1 Q 0.665,0.1 0.68,0.08 L 0.72,0.02 Q 0.73,0 0.75,0 L 1,0 L 1,1 L 0,1 Z`;
+  const smoothNotchPath = `shape(
+    from 0% 0%,
+    line to 25% 0%,
+    curve to 28% 2% with 27% 0%,
+    curve to 35% 10% with 32% 8%,
+    line to 65% 10%,
+    curve to 72% 2% with 68% 8%,
+    curve to 75% 0% with 73% 0%,
+    line to 100% 0%,
+    line to 100% 100%,
+    line to 0% 100%,
+    close
+  )`;
 
   return (
-    <div className="flex flex-col items-center relative pt-6">
-      <motion.svg width="0" height="0" className="absolute">
-        <defs>
-          <clipPath id="slumpClip" clipPathUnits="objectBoundingBox">
-            <motion.path d={smoothNotchPath} initial={false} />
-          </clipPath>
-        </defs>
-      </motion.svg>
+    <div className="flex flex-col items-center relative pt-6 w-full">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20">
         <span className="bg-bgcolor px-6 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-primary border border-primary/20 rounded-full shadow-sm whitespace-nowrap">
           {groupTitle}
@@ -46,9 +51,13 @@ function Icons({
       </div>
 
       <ul
-        style={{ clipPath: "url(#slumpClip)" }}
-        className={`bg-primary/5 border border-primary/15 w-80 min-h-[220] 
-                   flex flex-wrap gap-3 justify-center items-center 
+        style={{
+          clipPath: smoothNotchPath,
+          width: width ? `${width}px` : "320px",
+          minHeight: height ? `${height}px` : "220px",
+        }}
+        className={`bg-primary/5 border border-primary/15 
+                   flex ${flexStyle} gap-3 justify-center items-center 
                    rounded-[3rem] p-6 pt-12 transition-all duration-300 
                    hover:bg-primary/8 shadow-sm`}
       >

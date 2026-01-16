@@ -50,8 +50,8 @@ function ContactMe({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
               <Icons
                 IconsList={socialIcons}
                 groupTitle="Social"
-                width={200}
-                height={80}
+                width={500}
+                height={160}
                 flexStyle="flex-wrap md:flex-nowrap"
               />
             </div>
@@ -81,7 +81,7 @@ function ContactMe({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
               />
               <button
                 type="submit"
-                className="group w-full py-4 bg-primary text-bgcolor font-black tracking-widest text-sm uppercase rounded-2xl shadow-lg shadow-primary/20 flex items-center justify-center gap-3 mt-4 hover:-translate-y-0.5 active:scale-[0.98] transition-all"
+                className="group w-full py-4 bg-primary/80 text-bgcolor font-black tracking-widest text-sm uppercase rounded-2xl shadow-lg shadow-primary/20 flex items-center justify-center gap-3 mt-4 hover:-translate-y-0.5 active:scale-[0.98] hover:bg-primary/60 transition-all"
               >
                 Submit
                 <IoSend className="w-4 h-4 -rotate-12 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
