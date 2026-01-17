@@ -13,7 +13,7 @@ export default function Home({
   const modes = ["Remote", "Hybrid", "On-site"];
   return (
     <section
-      className="flex w-full h-screen items-center justify-center scroll-mt-16 bg-gradient-to-b from-bgcolor/90 to-bgcolor"
+      className="flex w-full h-screen items-center justify-center scroll-mt-16 bg-linear-to-b from-bgcolor/90 to-bgcolor"
       ref={ref}
       id="home"
     >
@@ -25,11 +25,10 @@ export default function Home({
       >
         <span className="text-3xl gap-4 flex flex-col ">
           <h1>
-            Hi there, I&apos;m{" "}
+            <span className="opacity-80">Hi there, I&apos;m{" "}</span>
             <span className="text-primary/90 font-bold">Likith Adusumalli</span>
           </h1>
-          {/* TODO: Add text gradient from left top to bottom to below text only*/}
-          <p className="text-primary text-5xl font-bold">
+          <p className="text-5xl font-bold bg-linear-to-b from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
             Full-Stack Developer
           </p>
         </span>
