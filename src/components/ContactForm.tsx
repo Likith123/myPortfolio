@@ -1,5 +1,6 @@
+import { sendEmail } from "@/actions/sendEmail";
 import Form from "next/form";
-import { IoSend } from "react-icons/io5";
+import SubmitButton from "./ui/SubmitButton";
 
 type InputProps = {
   name: string;
@@ -21,8 +22,12 @@ function Input({ name, placeholder, type = "text" }: InputProps) {
 }
 
 function ContactForm() {
+  async function handleSubmit(formData: FormData) {
+    await sendEmail(formData);
+  }
+  
   return (
-    <Form action="#" className="flex flex-col space-y-4">
+    <Form action={handleSubmit} className="flex flex-col space-y-4">
       <Input name="fullName" placeholder="Full Name" />
       <Input name="email" placeholder="Email Id" type="email" />
       <Input name="subject" placeholder="Subject" />
@@ -34,13 +39,7 @@ function ContactForm() {
         placeholder="Message"
         required
       />
-      <button
-        type="submit"
-        className="group w-full py-4 bg-primary/85 text-bgcolor font-black tracking-widest text-sm uppercase rounded-2xl shadow-lg shadow-primary/20 flex items-center justify-center gap-3 mt-4 hover:-translate-y-0.5 active:scale-[0.98] hover:bg-primary/80 transition-all"
-      >
-        Submit
-        <IoSend className="w-4 h-4 -rotate-12 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-      </button>
+      <SubmitButton />
     </Form>
   );
 }

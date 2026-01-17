@@ -1,5 +1,5 @@
 import { MotionDiv, MotionSpan } from "@/components/MotionTags";
-import RotatingText from "@/components/RotatingText";
+import RotatingText from "@/components/ui/RotatingText";
 import { Download } from "lucide-react";
 
 import Image from "next/image";
