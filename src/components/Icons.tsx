@@ -52,7 +52,7 @@ function Icons({
                    rounded-[3rem] p-6 pt-12 transition-all duration-300 
                    hover:bg-primary/8 shadow-sm`}
       >
-        {IconsList.map(({ color, Icon, name }, index) => (
+        {IconsList.map(({ Icon, name }, index) => (
           <motion.li
             key={name}
             variants={iconsVariants}
@@ -78,7 +78,7 @@ function Icons({
                 {name}
               </span>
               <span
-                className={`text-lg opacity-70 group-hover:opacity-100 transition-opacity`}
+                className="text-lg opacity-70 group-hover:opacity-100 transition-opacity"
               >
                 {Icon}
               </span>

@@ -1,5 +1,4 @@
 import ContactForm from "@/components/ContactForm";
-import Icons from "@/components/Icons";
 import { MotionDiv } from "@/components/MotionTags";
 import { socialIcons } from "@/lib/data";
 
@@ -28,7 +27,7 @@ function ContactMe({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
             <div className="mt-4 flex gap-6 w-full">
               {socialIcons.map(({ Icon, name, link }, index) => (
                 <a
-                  key={name}
+                  key={index}
                   href={link}
                   target="_blank"
                   rel="noopener noreferrer"
