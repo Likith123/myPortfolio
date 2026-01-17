@@ -31,7 +31,7 @@ function ContactMe({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
                   href={link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center space-x-1.5 mb-4 text-foreground/80 opacity-80 font-bold text-lg tracking-wide hover:underline hover:text-primary hover:opacity-100 transition-all"
+                  className="group flex items-center space-x-1.5 mb-4 text-foreground/80 opacity-80 font-bold text-lg tracking-wide hover:underline hover:text-primary hover:opacity-100 transition-all duration-300"
                 >
                   <span>{Icon}</span>
                   <span>{name}</span>
