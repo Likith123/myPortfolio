@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "motion/react";
-import Link from "next/link";
 
 type IconListType = {
   name: string;
@@ -18,15 +17,9 @@ const iconsVariants = {
 function Icons({
   IconsList,
   groupTitle,
-  width,
-  height,
-  flexStyle = "flex-wrap",
 }: {
   IconsList: IconListType;
   groupTitle: string;
-  width?: number;
-  height?: number;
-  flexStyle?: string;
 }) {
   const smoothNotchPath = `shape(
     from 0% 0%,
@@ -53,11 +46,9 @@ function Icons({
       <ul
         style={{
           clipPath: smoothNotchPath,
-          width: width ? `${width}px` : "320px",
-          minHeight: height ? `${height}px` : "220px",
         }}
-        className={`bg-primary/5 border border-primary/15 
-                   flex ${flexStyle} gap-3 justify-center items-center 
+        className={`bg-primary/5 border border-primary/15 w-80 min-h-[220px]
+                   flex flex-wrap gap-3 justify-center items-center 
                    rounded-[3rem] p-6 pt-12 transition-all duration-300 
                    hover:bg-primary/8 shadow-sm`}
       >
@@ -77,22 +68,21 @@ function Icons({
             viewport={{ once: true }}
             className="list-none"
           >
-            <Link
+            <span
               className="group text-[13px] font-semibold border border-foreground/15 px-3 py-1.5 rounded-xl 
                          flex items-center bg-bgcolor/60 backdrop-blur-md 
                          hover:border-primary/40 hover:text-primary transition-all duration-300 
                          space-x-2 shadow-sm"
-              href="#"
             >
               <span className="tracking-tight text-foreground/80 group-hover:text-primary transition-colors">
                 {name}
               </span>
               <span
-                className={`text-lg opacity-70 group-hover:opacity-100 transition-opacity ${color}`}
+                className={`text-lg opacity-70 group-hover:opacity-100 transition-opacity`}
               >
                 {Icon}
               </span>
-            </Link>
+            </span>
           </motion.li>
         ))}
       </ul>

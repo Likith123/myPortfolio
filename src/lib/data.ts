@@ -145,24 +145,24 @@ const backEndIcons = [
 ];
 const socialIcons = [
   {
-    color: "hover:text-neutral-500",
     Icon: React.createElement(FaXTwitter),
     name: "Twitter",
+    link: "https://twitter.com/likithadusumalli",
   },
   {
-    color: "hover:text-sky-500",
     Icon: React.createElement(FaLinkedin),
     name: "LinkedIn",
+    link: "https://www.linkedin.com/in/likith-naga-sai-adusumalli/",
   },
   {
-    color: "hover:text-gray-500",
     Icon: React.createElement(FaGithub),
     name: "GitHub",
+    link: "https://github.com/Likith123"
   },
   {
-    color: "hover:text-red-500",
     Icon: React.createElement(Mail),
     name: "Mail",
+    link: "mailto:likithadusumalli@gmail.com"
   },
 ];
 
