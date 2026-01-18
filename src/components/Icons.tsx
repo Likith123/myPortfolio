@@ -72,7 +72,7 @@ function Icons({
               className="group text-[13px] font-semibold border border-foreground/15 px-3 py-1.5 rounded-xl 
                          flex items-center bg-bgcolor/60 backdrop-blur-md 
                          hover:border-primary/40 hover:text-primary transition-all duration-300 
-                         space-x-2 shadow-sm"
+                         space-x-2 shadow-sm cursor-default"
             >
               <span className="tracking-tight text-foreground/80 group-hover:text-primary transition-colors">
                 {name}

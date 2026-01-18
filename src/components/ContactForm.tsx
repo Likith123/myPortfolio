@@ -1,5 +1,4 @@
 import { sendEmail } from "@/actions/sendEmail";
-import Form from "next/form";
 import SubmitButton from "./ui/SubmitButton";
 
 type InputProps = {
@@ -22,12 +21,8 @@ function Input({ name, placeholder, type = "text" }: InputProps) {
 }
 
 function ContactForm() {
-  async function handleSubmit(formData: FormData) {
-    await sendEmail(formData);
-  }
-  
   return (
-    <Form action={handleSubmit} className="flex flex-col space-y-4">
+    <form action={sendEmail} className="flex flex-col space-y-4">
       <Input name="fullName" placeholder="Full Name" />
       <Input name="email" placeholder="Email Id" type="email" />
       <Input name="subject" placeholder="Subject" />
@@ -40,7 +35,7 @@ function ContactForm() {
         required
       />
       <SubmitButton />
-    </Form>
+    </form>
   );
 }
 
