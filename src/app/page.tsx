@@ -28,7 +28,7 @@ export default function Home({
             <span className="opacity-80">Hi there, I&apos;m{" "}</span>
             <span className="text-primary/90 font-bold">Likith Adusumalli</span>
           </h1>
-          <p className="text-5xl font-bold bg-linear-to-b from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
+          <p className="text-5xl font-bold bg-linear-to-b from-primary/80 via-primary/90 to-primary bg-clip-text text-transparent">
             Full-Stack Developer
           </p>
         </span>
@@ -54,7 +54,7 @@ export default function Home({
         <div className="flex flex-wrap gap-6 pt-4">
           <Link
             href="/contactMe"
-            className="px-8 py-3 rounded-full text-white font-bold transition-all bg-gradient-to-r from-primary/90 to-primary hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5 active:scale-95 text-center"
+            className="px-8 py-3 rounded-full text-white font-bold transition-all bg-linear-to-r from-primary/90 to-primary hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5 active:scale-95 text-center"
           >
             Let&apos;s Work Together
           </Link>

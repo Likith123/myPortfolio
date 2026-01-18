@@ -18,6 +18,6 @@ export async function sendEmail(formData: FormData) {
       text: `From: ${fullName}\nEmail: ${email}\n\nMessage:\n${message}`,
     });
   } catch (error) {
-    alert("Failed to send email. Please try again later.");
+    alert("Failed to send email. Please try again later." + (error as Error).message);
   }
 }
