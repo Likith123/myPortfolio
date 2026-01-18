@@ -5,7 +5,7 @@ import { socialIcons } from "@/lib/data";
 function ContactMe({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
   return (
     <section
-      className="w-full h-auto py-14 md:pb-24 flex flex-col items-center justify-start scroll-mt-16 bg-bgcolor"
+      className="w-full h-auto py-14 md:pb-24 flex flex-col items-center justify-start scroll-mt-16"
       ref={ref}
       id="contactMe"
     >

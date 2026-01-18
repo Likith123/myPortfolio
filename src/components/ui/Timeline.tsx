@@ -91,7 +91,7 @@ function VerticalTimelineElementComponent({
 
 export default function ExperienceTimeline() {
   return (
-    <div className="bg-bgcolor pt-24 px-4 overflow-hidden">
+    <div className="pt-24 px-4 overflow-hidden">
       <div className="max-w-4xl mx-auto mb-20 text-center">
         <h1 className="text-4xl font-black text-foreground tracking-tighter">
           My <span className="text-primary italic">Journey</span>

@@ -4,6 +4,7 @@ import "./globals.css";
 
 import Navbar from "@/components/Navbar";
 import Sections from "@/components/Sections";
+import BackgroundAnimations from "@/components/BackgroundAnimations";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default function RootLayout() {
           type="text/css"
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
         />
+        {/* <BackgroundAnimations /> */}
         <Navbar />
         <main>
           <Sections />

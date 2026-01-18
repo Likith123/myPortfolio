@@ -13,7 +13,7 @@ export default function Home({
   const modes = ["Remote", "Hybrid", "On-site"];
   return (
     <section
-      className="flex w-full h-screen items-center justify-center scroll-mt-16 bg-linear-to-b from-bgcolor/90 to-bgcolor"
+      className="flex w-full h-screen items-center justify-center scroll-mt-16"
       ref={ref}
       id="home"
     >
