@@ -1,4 +1,5 @@
-"use server";
+"use server"
+import { EmailTemplate } from "@/components/EmailTemplate";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -10,14 +11,15 @@ export async function sendEmail(formData: FormData) {
   const message = formData.get("message") as string;
 
   try {
-    await resend.emails.send({
-      from: email,
-      to: ["likithadusumalli@gmail.com"],
+    const { data } = await resend.emails.send({
+      from: "Portfolio <onboarding@resend.dev>",
+      to: "likithadusumalli@gmail.com",
       subject: `New Message: ${subject || "No Subject"}`,
       replyTo: email,
-      text: `From: ${fullName}\nEmail: ${email}\n\nMessage:\n${message}`,
+      react: EmailTemplate({ fullName, email, subject, message }),
     });
+    console.log("Email sent successfully", data);
   } catch (error) {
-    alert("Failed to send email. Please try again later." + (error as Error).message);
+    console.error("Error sending email:", error);
   }
 }

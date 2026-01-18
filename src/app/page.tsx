@@ -28,7 +28,7 @@ export default function Home({
             <span className="opacity-80">Hi there, I&apos;m{" "}</span>
             <span className="text-primary/90 font-bold">Likith Adusumalli</span>
           </h1>
-          <p className="text-5xl font-bold bg-linear-to-b from-primary/80 via-primary/90 to-primary bg-clip-text text-transparent">
+          <p className="text-5xl font-bold bg-linear-to-br from-primary/80 via-primary to-accent/80 bg-clip-text text-transparent">
             Full-Stack Developer
           </p>
         </span>
