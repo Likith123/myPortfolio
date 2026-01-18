@@ -146,8 +146,8 @@ const backEndIcons = [
 const socialIcons = [
   {
     Icon: React.createElement(FaXTwitter),
-    name: "Twitter",
-    link: "https://twitter.com/likithadusumalli",
+    name: "Twitter / X",
+    link: "https://x.com/LikithDeveloper",
   },
   {
     Icon: React.createElement(FaLinkedin),
