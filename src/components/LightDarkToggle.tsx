@@ -5,17 +5,17 @@ import { useEffect, useState } from "react";
 
 type Theme = "light" | "dark";
 function LightDarkToggle() {
-  const [theme, setTheme] = useState<Theme>("dark"); // Replace with actual state management logic
+  const [theme, setTheme] = useState<Theme>("dark");
 
   function handleClick() {
-    if (theme === "dark") {
-      setTheme("light");
-      window.localStorage.setItem("theme", "light");
+    const newTheme = theme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    window.localStorage.setItem("theme", newTheme);
+    
+    if (newTheme === "light") {
       document.documentElement.classList.remove("dark");
       document.documentElement.classList.add("light");
     } else {
-      setTheme("dark");
-      window.localStorage.setItem("theme", "dark");
       document.documentElement.classList.remove("light");
       document.documentElement.classList.add("dark");
     }
@@ -23,33 +23,28 @@ function LightDarkToggle() {
 
   useEffect(() => {
     const savedTheme = window.localStorage.getItem("theme") as Theme | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-      if (savedTheme === "dark") {
-        document.documentElement.classList.remove("light");
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-        document.documentElement.classList.add("light");
-      }
-    } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
-      setTheme("light");
-      document.documentElement.classList.remove("dark");
-      document.documentElement.classList.add("light");
-    } else {
-      setTheme("dark");
-      document.documentElement.classList.remove("light");
-      document.documentElement.classList.add("dark");
-    }
+    const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+    
+    const initialTheme = savedTheme || (prefersLight ? "light" : "dark");
+    
+    setTheme(initialTheme);
+    document.documentElement.classList.remove("light", "dark");
+    document.documentElement.classList.add(initialTheme);
   }, []);
 
   return (
-    <button className="ml-4" onClick={handleClick}>
-      {theme === "light" ? (
-        <Sun className="w-6 h-6 hover:stroke-yellow-500 hover:fill-yellow-500 rotate-90 transition-all duration-300 ease-in-out" />
-      ) : (
-        <Moon className="w-6 h-6 hover:stroke-gray-700 hover:fill-gray-700 transition-all duration-300 ease-in-out" />
-      )}
+    <button 
+      className="ml-2 md:ml-4 p-2 rounded-xl active:scale-90 md:hover:bg-primary/5 transition-all duration-200" 
+      onClick={handleClick}
+      aria-label="Toggle Theme"
+    >
+      <div className="relative w-6 h-6 overflow-hidden">
+        {theme === "light" ? (
+          <Sun className="w-6 h-6 text-yellow-500 fill-yellow-500 rotate-0 transition-all duration-500 ease-spring" />
+        ) : (
+          <Moon className="w-6 h-6 text-slate-400 fill-slate-400 -rotate-12 transition-all duration-500 ease-spring" />
+        )}
+      </div>
     </button>
   );
 }

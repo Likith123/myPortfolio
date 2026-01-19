@@ -10,30 +10,28 @@ import {
 function About({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
   return (
     <section
-      className="p-8 flex flex-col gap-8 scroll-mt-16"
+      className="p-6 md:p-16 flex flex-col gap-8 scroll-mt-16"
       ref={ref}
       id="about"
     >
-      <h1 className="text-4xl font-bold text-center mt-8 tracking-tighter">
+      <h1 className="text-3xl md:text-4xl font-bold text-center mt-8 tracking-tighter">
         About <span className="text-primary italic">Me</span>
       </h1>
-      {/* About Myself */}
       <MotionDiv
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start"
+        className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start"
       >
-        {/* Will update if required*/}
         <div className="lg:col-span-7 space-y-8">
           <div>
-            <h2 className="text-4xl font-bold text-foreground leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
               Turning &quot;What if?&quot; into <br />
               <span className="text-primary">Reliable Software.</span>
             </h2>
           </div>
 
-          <div className="space-y-6 text-lg text-foreground/80 leading-relaxed">
+          <div className="space-y-6 text-base md:text-lg text-foreground/80 leading-relaxed">
             <p className="italic font-medium text-foreground/60 border-l-4 border-primary/30 pl-4">
               &quot;I didn&apos;t grow up dreaming of becoming a developer—but
               once I compiled my first Hello World, I never looked back.&quot;
@@ -73,13 +71,13 @@ function About({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
           </div>
         </div>
 
-        <div className="lg:col-span-5 lg:sticky lg:top-24">
-          <div className="bg-primary/5 rounded-3xl p-8 border border-primary/10 shadow-sm">
+        <div className="lg:col-span-5 lg:sticky lg:top-24 w-full">
+          <div className="bg-primary/5 rounded-3xl p-6 md:p-8 border border-primary/10 shadow-sm">
             <h4 className="text-xl font-bold text-foreground mb-6">Snapshot</h4>
 
             <ul className="space-y-6">
               <li className="flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-bgcolor flex items-center justify-center shadow-sm text-primary">
+                <div className="w-10 h-10 shrink-0 rounded-full bg-bgcolor flex items-center justify-center shadow-sm text-primary">
                   🚀
                 </div>
                 <div>
@@ -93,7 +91,7 @@ function About({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
               </li>
 
               <li className="flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-bgcolor flex items-center justify-center shadow-sm text-primary">
+                <div className="w-10 h-10 shrink-0 rounded-full bg-bgcolor flex items-center justify-center shadow-sm text-primary">
                   ⚡
                 </div>
                 <div>
@@ -107,7 +105,7 @@ function About({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
               </li>
 
               <li className="flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-bgcolor flex items-center justify-center shadow-sm text-primary">
+                <div className="w-10 h-10 shrink-0 rounded-full bg-bgcolor flex items-center justify-center shadow-sm text-primary">
                   ♟️
                 </div>
                 <div>
@@ -131,25 +129,18 @@ function About({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
         </div>
       </MotionDiv>
 
-      {/* Skills */}
-      <MotionDiv className="p-8 rounded-md">
-        <h1 className="text-4xl font-bold text-center py-8">
+      <MotionDiv className="py-8 md:p-8 rounded-md">
+        <h1 className="text-3xl md:text-4xl font-bold text-center py-8">
           My <span className="text-primary italic">Skills</span>
         </h1>
-        <div className="flex flex-col justify-around items-start space-y-4 md:flex-row md:space-x-4">
-          {/* Languages */}
+        <div className="flex flex-col gap-8 md:flex-row md:justify-around md:items-start md:space-x-4">
           <Icons IconsList={programmingLanguagesIcons} groupTitle="Languages" />
-
-          {/* Frontend */}
           <Icons IconsList={frontEndIcons} groupTitle="Frontend" />
-
-          {/* Backend */}
           <Icons IconsList={backEndIcons} groupTitle="Backend" />
         </div>
       </MotionDiv>
 
-      {/* Experience */}
-      <div className="p-8">
+      <div className="py-8 md:p-8 overflow-x-hidden">
         <ExperienceTimeline />
       </div>
     </section>
