@@ -15,15 +15,13 @@ function Sections() {
   const projectsRef = useRef<HTMLElement | null>(null);
   const contactRef = useRef<HTMLElement | null>(null);
 
-  // Map routes to refs
-  const sections: Record<string, React.RefObject<HTMLElement | null>> = {
-    "/": homeRef,
-    "/about": aboutRef,
-    "/projects": projectsRef,
-    "/contactMe": contactRef,
-  };
-
   useEffect(() => {
+    const sections: Record<string, React.RefObject<HTMLElement | null>> = {
+      "/": homeRef,
+      "/about": aboutRef,
+      "/projects": projectsRef,
+      "/contactMe": contactRef,
+    };
     const targetRef: React.RefObject<HTMLElement | null> = sections[pathname];
     if (targetRef?.current) {
       targetRef.current?.scrollIntoView({ behavior: "smooth" });

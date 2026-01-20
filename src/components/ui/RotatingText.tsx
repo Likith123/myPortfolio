@@ -8,7 +8,7 @@ function RotatingText({ modes }: { modes: string[] }) {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % modes.length);
+      setIndex((prev) => (prev + 1) % 3);
     }, 3000);
     return () => clearInterval(timer);
   }, []);

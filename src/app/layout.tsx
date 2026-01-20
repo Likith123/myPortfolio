@@ -4,7 +4,6 @@ import "./globals.css";
 
 import Navbar from "@/components/Navbar";
 import Sections from "@/components/Sections";
-import BackgroundAnimations from "@/components/BackgroundAnimations";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
