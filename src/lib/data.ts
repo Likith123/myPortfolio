@@ -157,29 +157,31 @@ const socialIcons = [
   {
     Icon: React.createElement(FaGithub),
     name: "GitHub",
-    link: "https://github.com/Likith123"
+    link: "https://github.com/Likith123",
   },
   {
     Icon: React.createElement(Mail),
     name: "Mail",
-    link: "mailto:likithadusumalli@gmail.com"
+    link: "mailto:likithadusumalli@gmail.com",
   },
 ];
 
 // Projects Data
 const projectsList = [
   {
-    title: "Project Alpha",
+    title: "JoAT : Job Applications Tracker",
     description:
-      "An innovative project that revolutionizes technology. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet.",
-    link: "https://example.com/project-alpha",
-    image: "/undraw_coding_joxb.svg",
+      "Track job applications, manage interviews, organize offers. Stay organized and land your dream job with real-time updates.",
+    link: "https://yourjoat.vercel.app",
+    github: "https://github.com/Likith123/job-application-tracker",
+    image: "https://yourjoat.vercel.app/og-image.png",
   },
   {
     title: "Project Beta",
     description:
       "A groundbreaking project that changes the way we interact. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet.",
     link: "https://example.com/project-beta",
+    github: "https://github.com/Likith123",
     image: "/globe.svg",
   },
 ];

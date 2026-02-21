@@ -35,7 +35,7 @@ function Projects({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-contain p-4 md:p-6 transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover rounded-lg transition-transform duration-500 translate-x-4 translate-y-4 scale-95 group-hover:scale-100 group-hover:translate-x-0 group-hover:translate-y-0"
                 />
               </div>
             </div>
@@ -65,7 +65,7 @@ function Projects({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
                 </Link>
 
                 <Link
-                  href={project.link}
+                  href={project.github}
                   target="_blank"
                   className="flex items-center gap-2 font-bold text-[10px] md:text-[11px] uppercase tracking-widest text-foreground/90 hover:text-foreground/70 transition-all"
                 >
