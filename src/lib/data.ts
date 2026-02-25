@@ -175,6 +175,7 @@ const projectsList = [
     link: "https://yourjoat.vercel.app",
     github: "https://github.com/Likith123/job-application-tracker",
     image: "https://yourjoat.vercel.app/og-image.png",
+    techUsed: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
   },
   {
     title: "Project Beta",
@@ -183,6 +184,7 @@ const projectsList = [
     link: "https://example.com/project-beta",
     github: "https://github.com/Likith123",
     image: "/globe.svg",
+    techUsed: ["React", "Node.js", "Express", "PostgreSQL"], // Example tech stack
   },
 ];
 

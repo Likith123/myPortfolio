@@ -54,6 +54,18 @@ function Projects({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
                 {project.description}
               </p>
 
+              {/* will update the techUsed property in each project and this based on requirement */}
+              <div className="flex flex-wrap gap-2 mt-2">
+                {project.techUsed.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="text-[11px] md:text-xs bg-primary/10 text-primary px-2 py-1 rounded-full"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
               <div className="flex items-center justify-center md:justify-start gap-6 pt-2">
                 <Link
                   href={project.link}
