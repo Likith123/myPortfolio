@@ -23,7 +23,7 @@
 }
 
 .dark {
-  --background: 25, 22, 26;        /* deep aubergine */
+  --background: 15, 12, 12;        /* deep aubergine */
   --foreground: 243, 237, 231;     /* off-white */
   --primary: 255, 118, 96;         /* coral glow */
   --secondary: 160, 95, 255;       /* electric violet */
