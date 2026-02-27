@@ -9,7 +9,7 @@ import NavLinks from "./NavLinks";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-50 bg-bgcolor/20 shadow-md blur-backdrop-filter backdrop-filter backdrop-blur-lg">
+    <header className="sticky top-0 z-50 bg-bgcolor/20 shadow-md shadow-foreground/3 blur-backdrop-filter backdrop-filter backdrop-blur-lg">
       <nav className="">
         <div className="flex items-center justify-between px-4 md:px-16 py-4">
           <div className="tracking-wide text-xl md:text-3xl font-black">
