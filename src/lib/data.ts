@@ -189,13 +189,13 @@ const projectsList = [
     ],
   },
   {
-    title: "Project Beta",
+    title: "Tic Tac Toe",
     description:
-      "A groundbreaking project that changes the way we interact. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet.",
-    link: "https://example.com/project-beta",
-    github: "https://github.com/Likith123",
-    image: "/globe.svg",
-    techUsed: ["React", "Node.js", "Express", "PostgreSQL"], // Example tech stack
+      "Built an interactive Tic Tac Toe game using HTML5, CSS3, and JavaScript with dynamic DOM updates and responsive UI",
+    link: "https://likith123.github.io/TicTacToe",
+    github: "https://github.com/Likith123/TicTacToe",
+    image: "/tictactoe.png",
+    techUsed: ["HTML5", "CSS3", "JavaScript"],
   },
 ];
 
