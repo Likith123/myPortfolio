@@ -1,8 +1,7 @@
 import { MotionDiv, MotionSpan } from "@/components/MotionTags";
 import RotatingText from "@/components/ui/RotatingText";
 import { Download } from "lucide-react";
-
-import Image from "next/image";
+import HeroConsole from "@/components/HeroConsole";
 import Link from "next/link";
 
 export default function Home({
@@ -10,7 +9,7 @@ export default function Home({
 }: {
   ref: React.RefObject<HTMLElement | null>;
 }) {
-  const modes = ["Remote", "Hybrid", "On-site"];
+  const modes = ["Remote", "Hybrid", "Relocation"];
   return (
     <section
       className="flex flex-col-reverse md:flex-row w-full min-h-screen items-center justify-center scroll-mt-16 overflow-x-hidden"
@@ -18,41 +17,69 @@ export default function Home({
       id="home"
     >
       <MotionDiv
-        className="flex flex-col flex-1 justify-center w-full md:w-1/2 px-6 md:px-16 py-12 md:py-8 space-y-6 md:space-y-8"
+        className="flex flex-col flex-1 justify-center w-full md:w-1/2 px-6 md:px-12 lg:px-16 py-8 md:py-6 space-y-4"
         animate={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: 50 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="text-2xl md:text-3xl gap-2 md:gap-4 flex flex-col">
-          <h1>
-            <span className="opacity-80">Hi there, I&apos;m{" "}</span>
-            <span className="text-primary/90 font-bold">Likith Adusumalli</span>
+        <div className="gap-1.5 md:gap-2 flex flex-col animate-in fade-in duration-1000">
+          <h1 className="tracking-tight text-xl md:text-2xl font-sans">
+            <span className="text-muted font-normal">Hi there, I&apos;m{" "}</span>
+            <span className="text-foreground font-bold">Likith Naga Sai Adusumalli</span>
           </h1>
-          <p className="text-4xl md:text-5xl font-bold bg-linear-to-br from-primary/80 via-primary to-accent/80 bg-clip-text text-transparent leading-tight">
-            Full-Stack Developer
-          </p>
-        </div>
-        <div className="space-y-4 text-sm md:text-base">
-            <p className="font-medium">
-              I bridge the gap between complex backend logic and seamless frontend
-              experiences using{" "}
-              <span className="text-primary/90 font-semibold">
-                MERN, Next.js, Go, and Java
-              </span>.
-            </p>
-            <p className="opacity-90">
-              I build scalable, user-centric web applications. Currently focused on crafting clean code and solving real-world
-              problems with the MERN stack.
-            </p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground leading-tight tracking-tight font-sans">
+            Full-Stack Engineer
+          </h2>
+          <div className="font-mono text-xs sm:text-sm tracking-wider uppercase font-semibold text-primary flex items-center gap-2 pt-0.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+            Product Technical Analyst — EdgeVerve Systems
+          </div>
         </div>
 
-        <p className="text-base md:text-lg font-medium flex flex-wrap gap-1 items-center">
-          Open to <RotatingText modes={modes} /> opportunities globally.
-        </p>
-        <div className="flex flex-col sm:flex-row flex-wrap gap-4 md:gap-6 pt-4">
+        {/* Quantified Proof Ledger */}
+        <div className="grid grid-cols-3 gap-2 sm:gap-3 p-3 rounded-2xl bg-panel border border-panel-line backdrop-blur-md">
+          <div className="flex flex-col">
+            <span className="font-mono text-lg sm:text-xl md:text-2xl font-bold text-foreground tracking-tight">4+ Years</span>
+            <span className="font-mono text-[9px] sm:text-[10px] text-muted font-medium uppercase tracking-wider leading-tight mt-0.5">
+              Enterprise Exp
+            </span>
+          </div>
+          <div className="flex flex-col border-x border-panel-line px-2 sm:px-3">
+            <span className="font-mono text-lg sm:text-xl md:text-2xl font-bold text-primary tracking-tight">Finacle</span>
+            <span className="font-mono text-[9px] sm:text-[10px] text-muted font-medium uppercase tracking-wider leading-tight mt-0.5">
+              Core Banking
+            </span>
+          </div>
+          <div className="flex flex-col pl-1 sm:pl-2">
+            <span className="font-mono text-lg sm:text-xl md:text-2xl font-bold text-foreground tracking-tight">30+ Features</span>
+            <span className="font-mono text-[9px] sm:text-[10px] text-muted font-medium uppercase tracking-wider leading-tight mt-0.5">
+              Delivered
+            </span>
+          </div>
+        </div>
+
+        <div className="space-y-2 text-sm md:text-[15px]">
+          <p className="font-medium text-foreground leading-relaxed">
+            Frontend-focused Full Stack Engineer specializing in{" "}
+            <span className="text-primary font-semibold">React, Next.js, and TypeScript</span>,
+            backed by enterprise banking backends in{" "}
+            <span className="text-primary font-semibold">Java and Spring Boot</span>.
+          </p>
+          <p className="text-muted leading-relaxed text-xs sm:text-sm">
+            Product Technical Analyst at <strong className="font-semibold text-foreground">EdgeVerve Systems</strong> (Finacle Core Banking Platform), building mission-critical UI architectures for global financial institutions and shipping production-ready SaaS platforms.
+          </p>
+        </div>
+
+        <div className="text-sm md:text-base font-medium flex flex-wrap gap-2 items-center text-foreground pt-1">
+          <span className="text-muted">Open to</span>
+          <RotatingText modes={modes} />
+          <span className="text-muted">roles worldwide.</span>
+        </div>
+
+        <div className="flex flex-row flex-wrap gap-3 sm:gap-4 pt-1">
           <Link
             href="/contactMe"
-            className="px-8 py-4 md:py-3 rounded-full text-white font-bold transition-all bg-linear-to-r from-primary/90 to-primary hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5 active:scale-95 text-center w-full sm:w-auto"
+            className="font-sans px-6 sm:px-8 py-3 rounded-full text-background font-bold transition-all bg-primary hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/25 hover:-translate-y-0.5 active:scale-95 text-center text-sm md:text-base cursor-pointer"
           >
             Let&apos;s Work Together
           </Link>
@@ -62,37 +89,28 @@ export default function Home({
             download="Likith_Adusumalli_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="group px-8 py-4 md:py-3 border-2 border-primary/20 rounded-full font-bold text-primary 
-                       hover:bg-primary/5 hover:border-primary transition-all 
-                       flex items-center justify-center cursor-pointer active:scale-95 w-full sm:w-auto"
+            className="font-sans group px-6 sm:px-8 py-3 border border-panel-line bg-panel/70 rounded-full font-bold text-foreground 
+                       hover:bg-panel hover:border-primary hover:text-primary transition-all 
+                       flex items-center justify-center cursor-pointer active:scale-95 text-sm md:text-base shadow-xs"
           >
-            Resume
+            Resume / CV
             <MotionSpan
               className="ml-2"
               animate={{ y: [0, 2, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             >
-              <Download size={20} />
+              <Download size={16} />
             </MotionSpan>
           </a>
         </div>
       </MotionDiv>
       <MotionDiv
-        className="flex flex-1 items-center justify-center w-full md:w-1/2 p-8 md:h-screen"
+        className="flex flex-1 items-center justify-center w-full md:w-1/2 p-6 md:p-8"
         animate={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: 50 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.5, delay: 0.15 }}
       >
-        <div className="relative flex justify-center w-full max-w-[300px] md:max-w-[400px]">
-          <Image
-            src="/undraw_coding_joxb.svg"
-            alt="SVG"
-            height={400}
-            width={400}
-            className="w-full h-auto"
-            priority
-          />
-        </div>
+        <HeroConsole />
       </MotionDiv>
     </section>
   );

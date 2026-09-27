@@ -52,39 +52,45 @@ function Icons({
                    rounded-[3rem] p-6 pt-12 transition-all duration-300 
                    hover:bg-primary/8 shadow-sm`}
       >
-        {IconsList.map(({ Icon, name }, index) => (
-          <motion.li
-            key={name}
-            variants={iconsVariants}
-            whileInView="animate"
-            initial="initial"
-            whileHover={{ scale: 1.05, y: -2 }}
-            transition={{
-              delay: 0.05 * index,
-              type: "spring",
-              stiffness: 260,
-              damping: 20,
-            }}
-            viewport={{ once: true }}
-            className="list-none"
-          >
-            <span
-              className="group text-[13px] font-semibold border border-foreground/15 px-3 py-1.5 rounded-xl 
-                         flex items-center bg-bgcolor/60 backdrop-blur-md 
-                         hover:border-primary/40 hover:text-primary transition-all duration-300 
-                         space-x-2 shadow-sm cursor-default"
+        {IconsList.map(({ Icon, name, color }, index) => {
+          // Fix black hover colors (e.g. Next.js, Express) to be readable in dark mode
+          const hoverColor = color === "hover:text-[#000000]"
+            ? "hover:text-black dark:hover:text-white hover:border-black/30 dark:hover:border-white/30"
+            : `${color} hover:border-current/30`;
+
+          return (
+            <motion.li
+              key={name}
+              variants={iconsVariants}
+              whileInView="animate"
+              initial="initial"
+              whileHover={{ scale: 1.05, y: -2 }}
+              transition={{
+                delay: 0.05 * index,
+                type: "spring",
+                stiffness: 260,
+                damping: 20,
+              }}
+              viewport={{ once: true }}
+              className="list-none"
             >
-              <span className="tracking-tight text-foreground/80 group-hover:text-primary transition-colors">
-                {name}
-              </span>
               <span
-                className="text-lg opacity-70 group-hover:opacity-100 transition-opacity"
+                className={`group text-[13px] font-semibold border border-foreground/15 px-3 py-1.5 rounded-xl 
+                           flex items-center bg-bgcolor/60 backdrop-blur-md 
+                           transition-all duration-300 space-x-2 shadow-sm cursor-default ${hoverColor}`}
               >
-                {Icon}
+                <span className="tracking-tight text-foreground/80 group-hover:text-inherit transition-colors">
+                  {name}
+                </span>
+                <span
+                  className="text-lg opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all"
+                >
+                  {Icon}
+                </span>
               </span>
-            </span>
-          </motion.li>
-        ))}
+            </motion.li>
+          );
+        })}
       </ul>
     </div>
   );

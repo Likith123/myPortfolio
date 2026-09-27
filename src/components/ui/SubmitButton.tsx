@@ -8,7 +8,7 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="group w-full py-4 bg-primary text-bgcolor font-black tracking-widest text-sm uppercase rounded-2xl shadow-lg shadow-primary/20 flex items-center justify-center gap-3 mt-4 disabled:opacity-70 disabled:cursor-not-allowed md:hover:-translate-y-0.5 md:hover:bg-primary/90 active:scale-[0.98] transition-all duration-300"
+      className="group w-full py-4 bg-primary text-slate-950 font-bold tracking-widest text-sm uppercase rounded-2xl shadow-lg shadow-primary/20 flex items-center justify-center gap-3 mt-4 disabled:opacity-70 disabled:cursor-not-allowed md:hover:-translate-y-0.5 md:hover:bg-primary/90 active:scale-[0.98] transition-all duration-300 cursor-pointer font-sans"
     >
       <span className={pending ? "animate-pulse" : ""}>
         {pending ? "Sending..." : "Submit"}

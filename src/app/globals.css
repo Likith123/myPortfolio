@@ -1,41 +1,123 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
-  --color-bgcolor: rgb(var(--background)/ <alpha-value>);
-  --color-foreground: rgb(var(--foreground)/ <alpha-value>);
-  --color-primary: rgb(var(--primary)/ <alpha-value>);
-  --color-secondary: rgb(var(--secondary)/ <alpha-value>);
-  --color-accent: rgb(var(--accent)/ <alpha-value>);
+  --color-bgcolor: var(--background);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-panel: var(--panel);
+  --color-panel-line: var(--panel-border);
+  --color-gold: var(--color-gold);
+  --color-gold-dim: var(--color-gold-dim);
+  --color-code-str: var(--code-string);
+  --color-code-comm: var(--code-comment);
+  --color-dot-red: var(--dot-red);
+  --color-dot-yellow: var(--dot-yellow);
+  --color-dot-green: var(--dot-green);
+
+  --font-sans: var(--font-space-grotesk), system-ui, -apple-system, sans-serif;
+  --font-heading: var(--font-space-grotesk), sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), monospace;
 }
 
 :root, .light {
-  --background: 255, 252, 247;     /* soft peach-white */
-  --foreground: 41, 37, 36;        /* warm dark brown */
-  --primary: 235, 90, 70;          /* coral */
-  --secondary: 119, 67, 219;       /* violet */
-  --accent: 255, 196, 108;         /* amber */
+  --background: #F7F8FA;
+  --foreground: #0D1013;
+  --muted: #646E7D;
+  --primary: #B8862D;
+  --secondary: #7A6440;
+  --accent: #B8862D;
+  --panel: #FFFFFF;
+  --panel-border: #E2E8F0;
 
-  --color-bgcolor: rgb(var(--background));
-  --color-foreground: rgb(var(--foreground));
-  --color-primary: rgb(var(--primary));
-  --color-secondary: rgb(var(--secondary));
-  --color-accent: rgb(var(--accent));
+  --color-gold: #B8862D;
+  --color-gold-dim: #7A6440;
+  --code-string: #2B6C94;
+  --code-comment: #646E7D;
+  --dot-red: #C9705A;
+  --dot-yellow: #B8862D;
+  --dot-green: #5A9C6E;
 }
 
 .dark {
-  --background: 15, 12, 12;        /* deep aubergine */
-  --foreground: 243, 237, 231;     /* off-white */
-  --primary: 255, 118, 96;         /* coral glow */
-  --secondary: 160, 95, 255;       /* electric violet */
-  --accent: 255, 187, 92;          /* amber pop */
+  /* Exact Ink, Panel, Text, and Gold Design Tokens */
+  --background: #0D1013;        /* Ink (background) #0D1013 */
+  --foreground: #E7E9EC;        /* Text (primary) #E7E9EC */
+  --muted: #8B93A0;             /* Muted #8B93A0 */
+  --primary: #C9A15A;            /* Gold (accent) #C9A15A */
+  --secondary: #7A6440;          /* Gold dim #7A6440 */
+  --accent: #C9A15A;             /* Gold (accent) #C9A15A */
+  --panel: #15191F;              /* Panel #15191F */
+  --panel-border: #262C35;         /* Panel line #262C35 */
 
-  --color-bgcolor: rgb(var(--background));
-  --color-foreground: rgb(var(--foreground));
-  --color-primary: rgb(var(--primary));
-  --color-secondary: rgb(var(--secondary));
-  --color-accent: rgb(var(--accent));
+  --color-gold: #C9A15A;         /* #C9A15A */
+  --color-gold-dim: #7A6440;     /* #7A6440 */
+  --code-string: #8FB4C9;       /* #8FB4C9 */
+  --code-comment: #5C6373;      /* #5C6373 */
+  --dot-red: #C9705A;            /* #C9705A */
+  --dot-yellow: #C9A15A;         /* #C9A15A */
+  --dot-green: #5A9C6E;          /* #5A9C6E */
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-space-grotesk), system-ui, -apple-system, sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-space-grotesk), sans-serif;
+  letter-spacing: -0.02em;
+}
+
+code, pre, .font-mono {
+  font-family: var(--font-ibm-plex-mono), monospace;
+}
+
+/* Glassmorphism utilities */
+.glass-effect {
+  background: color-mix(in srgb, var(--background) 88%, transparent);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--panel-border);
+}
+
+.glass-card {
+  background: var(--panel);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--panel-border);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.dark .glass-card {
+  background: color-mix(in srgb, var(--panel) 90%, transparent);
+  border: 1px solid var(--panel-border);
+  box-shadow: 0 14px 44px -10px rgba(0, 0, 0, 0.7);
+}
+
+.light .glass-card {
+  background: color-mix(in srgb, var(--panel) 95%, transparent);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--panel-border);
+  box-shadow: 0 10px 30px -10px rgba(13, 16, 19, 0.08);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--panel-border);
+  border-radius: 9999px;
+  border: 2px solid var(--background);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-dim);
 }

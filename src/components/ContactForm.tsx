@@ -13,7 +13,7 @@ function Input({ name, placeholder, type = "text" }: InputProps) {
       id={name}
       name={name}
       type={type}
-      className="w-full bg-bgcolor border border-foreground/10 rounded-2xl p-4 text-base outline-none focus:border-primary/50 transition-all placeholder:text-foreground/40"
+      className="w-full bg-bgcolor border border-panel-line text-foreground rounded-2xl p-4 text-sm md:text-base outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all placeholder:text-muted/60 font-sans"
       placeholder={placeholder}
       required
     />
@@ -30,7 +30,7 @@ function ContactForm() {
         id="message"
         name="message"
         rows={5}
-        className="w-full bg-bgcolor border border-foreground/10 rounded-2xl p-4 text-base outline-none focus:border-primary/50 transition-all resize-none placeholder:text-foreground/40"
+        className="w-full bg-bgcolor border border-panel-line text-foreground rounded-2xl p-4 text-sm md:text-base outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all resize-none placeholder:text-muted/60 font-sans"
         placeholder="Message"
         required
       />

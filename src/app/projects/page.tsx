@@ -13,7 +13,7 @@ function Projects({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
       ref={ref}
       id="projects"
     >
-      <h1 className="text-3xl md:text-4xl font-black text-center mt-8 mb-6 md:mb-12 tracking-tighter">
+      <h1 className="text-3xl md:text-4xl font-black text-center mt-8 mb-6 md:mb-12 tracking-tight text-foreground font-sans">
         My <span className="text-primary italic">Projects</span>
       </h1>
 
@@ -25,12 +25,12 @@ function Projects({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className={`flex flex-col md:flex-row items-center gap-6 md:gap-8 p-4 md:p-6 rounded-3xl md:rounded-4xl border border-foreground/5 bg-primary/5 hover:border-primary/20 transition-all duration-300 ${
+            className={`flex flex-col md:flex-row items-center gap-6 md:gap-8 p-4 md:p-6 rounded-3xl md:rounded-4xl border border-panel-line bg-panel hover:border-primary/40 hover:shadow-xl hover:shadow-black/50 transition-all duration-300 ${
               index % 2 === 0 ? "" : "md:flex-row-reverse"
             }`}
           >
             <div className="w-full md:w-2/5 group">
-              <div className="relative h-44 md:h-56 rounded-2xl overflow-hidden bg-bgcolor border border-foreground/5 shadow-inner">
+              <div className="relative h-44 md:h-56 rounded-2xl overflow-hidden bg-bgcolor border border-panel-line shadow-inner">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -42,24 +42,23 @@ function Projects({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
 
             <div className="flex-1 flex flex-col justify-center gap-3 text-center md:text-left px-1 md:px-2">
               <div className="space-y-0.5">
-                <span className="text-primary font-black text-[9px] tracking-[0.2em] uppercase opacity-60">
+                <span className="text-primary font-bold text-[10px] tracking-[0.2em] uppercase font-mono">
                   Project {index + 1}
                 </span>
-                <h3 className="text-xl md:text-2xl font-extrabold tracking-tight">
+                <h3 className="text-xl md:text-2xl font-bold tracking-tight text-foreground font-sans">
                   {project.title}
                 </h3>
               </div>
 
-              <p className="text-foreground/70 text-xs md:text-sm leading-relaxed font-medium line-clamp-3 md:line-clamp-none">
+              <p className="text-muted text-xs md:text-sm leading-relaxed font-normal">
                 {project.description}
               </p>
 
-              {/* will update the techUsed property in each project and this based on requirement */}
               <div className="flex flex-wrap gap-2 mt-2">
                 {project.techUsed.map((tech, i) => (
                   <span
                     key={i}
-                    className="text-[11px] md:text-xs bg-primary/10 text-primary px-2 py-1 rounded-full"
+                    className="text-[10px] md:text-[11px] font-mono bg-bgcolor text-code-str border border-panel-line px-2.5 py-1 rounded-full font-medium"
                   >
                     {tech}
                   </span>
@@ -70,7 +69,7 @@ function Projects({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
                 <Link
                   href={project.link}
                   target="_blank"
-                  className="flex items-center gap-2 font-bold text-[10px] md:text-[11px] uppercase tracking-widest text-primary hover:opacity-70 transition-all"
+                  className="flex items-center gap-2 font-bold text-[10px] md:text-[11px] uppercase tracking-widest text-primary hover:opacity-80 transition-all font-mono"
                 >
                   <LinkIcon className="size-3.5" />
                   <span>Live Demo</span>
@@ -79,7 +78,7 @@ function Projects({ ref }: { ref: React.RefObject<HTMLElement | null> }) {
                 <Link
                   href={project.github}
                   target="_blank"
-                  className="flex items-center gap-2 font-bold text-[10px] md:text-[11px] uppercase tracking-widest text-foreground/90 hover:text-foreground/70 transition-all"
+                  className="flex items-center gap-2 font-bold text-[10px] md:text-[11px] uppercase tracking-widest text-muted hover:text-foreground transition-all font-mono"
                 >
                   <FaGithub className="size-4" />
                   <span>Source</span>
